@@ -91,7 +91,7 @@
 			
 			<!-- New Fields Start -->
 			<p>
-				<label for="purposeofstop">What is the purpose of stop?</label>
+				<label for="purposeofstop">What is the purpose of the stop?</label>
 				<select id="purposeofstop" fieldtype_id="72">
 					<option value="0">[Select]</option>
 					<option value="76">Park and Ride</option>
@@ -103,7 +103,7 @@
 				</select>
 			</p>
 			<p>
-				<label for="distancetocurb">Distance from bus stop to curb of cross street in feet</label>
+				<label for="distancetocurb">Distance from the bus stop to curb of cross street(in feet)</label>
 				<input id="distancetocurb" name="distancetocurb" type="text" fieldtype_id="73">
 			</p>
 			<p>
@@ -247,6 +247,15 @@
 				<input type="radio" name="freeobstruction" value="13" fieldtype_id = "18">No
 				<input type="radio" name="freeobstruction" value="14" fieldtype_id = "18">Not Applicable
 			</p>
+			<!-- New Fields -->
+			<p>
+				<label for="distancefromsheltertocurb">Whats is the disance from shelter to curb?</label>
+				<input type="text" id="distancefromsheltertocurb" name="distancefromsheltertocurb" fieldtype_id="76">
+			</p>
+			<p>
+				<label for="clearspacemeasurements">Clear Space Measurements for Wheelchairs</label>
+				<input type="text" id="clearspacemeasurements" name="clearspacemeasurements" fieldtype_id="77">
+			</p>
 			<p>
 				<label for="comments">Any Comments</label>						
 				<textarea id="comments" name="comments" fieldtype_id="20" rows="5" cols="50"></textarea>
@@ -258,18 +267,7 @@
 			<p>
 				<label for="fileInput">Upload Photos</label>
 				<input type="file" id="fileInput" name="fileInput" fieldtype_id="71" accept="image/*" capture="camera" multiple/>				
-			</p>
-			
-			<!-- New Fields -->
-			<p>
-				<label for="distancefromsheltertocurb">Whats is the disance from shelter to curb?</label>
-				<input type="text" id="distancefromsheltertocurb" name="distancefromsheltertocurb" fieldtype_id="76">
-			</p>
-			<p>
-				<label for="clearspacemeasurements">Clear space measurements for wheelchairs</label>
-				<input type="text" id="clearspacemeasurements" name="clearspacemeasurements" fieldtype_id="77">
-			</p>
-			
+			</p>			
 		</div>
 
 		<h2>Intersection 1</h2>
@@ -345,19 +343,7 @@
 				<input type="radio" id="functionalaccess" name="functionalaccess" value="12" fieldtype_id = "50">Yes
 				<input type="radio" name="functionalaccess" value="13" fieldtype_id = "50">No
 				<input type="radio" name="functionalaccess" value="14" fieldtype_id = "50">Not Applicable
-			</p>
-			<p>
-				<label for="comments">Any Comments</label>						
-				<textarea id="comments" name="comments" fieldtype_id="20" rows="5" cols="50"></textarea>
-			</p>
-			<p>
-				<label for="otherinfo">Other Information</label>						
-				<textarea id="otherinfo" name="otherinfo" fieldtype_id="23" rows="5" cols="50"></textarea>
-			</p>
-			<p>
-				<label for="fileInput">Upload Photos</label>
-				<input type="file" id="fileInput" name="fileInput" fieldtype_id="71" accept="image/*" capture="camera" multiple/>				
-			</p>
+			</p>			
 			<p>
 				<label for="sidewalkwidth">What is sidewalk's width in the narrowest point?</label>
 				<input type="text" id="sidewalkwidth" name="sidewalkwidth" fieldtype_id="93">
@@ -367,24 +353,7 @@
 				<input type="text" id="sidewalkslope" name="sidewalkslope" fieldtype_id="94">
 			</p>
 			<p>
-				<label for="connectsidestop">Is sidewalk seemlessly connected to bus area?</label>
-				<input type="radio" id="connectsidestop" name="connectsidestop" value="12" fieldtype_id = "96">Yes
-				<input type="radio" name="connectsidestop" value="13" fieldtype_id = "???">No
-				<input type="radio" name="connectsidestop" value="14" fieldtype_id = "???">Not Applicable
-			</p>
-			<p>
-				<label for="conditionofsidewalk">Condition of sidewalk</label>
-				<select id="conditionofsidewalk" fieldtype_id="95">
-					<option value="0">[Select]</option>
-					<option value="67">1</option>
-					<option value="68">2</option>
-					<option value="69">3</option>
-					<option value="70">4</option>
-					<option value="71">5</option>
-				</select>
-			</p>
-			<p>
-				<label for="obstacles">Obstacles</label><br />
+				<label for="obstacles">Obstacles type/measurements</label><br />
 				<input type="checkbox" id="obstacles1" name="obstacles" fieldtype_id="97" value="112">PO Box<br />
 					<input type="text" name="obstacles" fieldtype_id="97"><br />
 				<input type="checkbox" name="obstacles" fieldtype_id="97" value="113">Newspaper<br />
@@ -397,13 +366,30 @@
 					<input type="text" name="obstacles" fieldtype_id="97"><br />
 			</p>
 			<p>
-				<label for="curbcutatint">Curb cut the intersection?</label>
+				<label for="connectsidestop">Is sidewalk seemlessly connected to bus stop area?</label>
+				<input type="radio" id="connectsidestop" name="connectsidestop" value="12" fieldtype_id = "96">Yes
+				<input type="radio" name="connectsidestop" value="13" fieldtype_id = "96">No
+				<input type="radio" name="connectsidestop" value="14" fieldtype_id = "96">Not Applicable
+			</p>
+			<p>
+				<label for="conditionofsidewalk">Condition of sidewalk</label>
+				<select id="conditionofsidewalk" fieldtype_id="95">
+					<option value="0">[Select]</option>
+					<option value="67">1</option>
+					<option value="68">2</option>
+					<option value="69">3</option>
+					<option value="70">4</option>
+					<option value="71">5</option>
+				</select>
+			</p>			
+			<p>
+				<label for="curbcutatint">Is Curb cut at the intersection?</label>
 				<input type="radio" id="curbcutatint" name="curbcutatint" value="12" fieldtype_id = "98">Yes
 				<input type="radio" name="curbcutatint" value="13" fieldtype_id = "98">No
 				<input type="radio" name="curbcutatint" value="14" fieldtype_id = "98">Not Applicable
 			</p>
 			<p>
-				<label for="turncateddomespresents">Do Curb cut turncated domes present?</label>
+				<label for="turncateddomespresents">Are Curb cut turncated domes present?</label>
 				<input type="radio" id="turncateddomespresents" name="turncateddomespresents" value="12" fieldtype_id = "99">Yes
 				<input type="radio" name="turncateddomespresents" value="13" fieldtype_id = "99">No
 				<input type="radio" name="turncateddomespresents" value="14" fieldtype_id = "99">Not Applicable
@@ -417,22 +403,33 @@
 				<input type="text" id="curbcutslope" name="curbcutslope" fieldtype_id="101">
 			</p>
 			<p>
-			<label for="oppcornerobserve">Opposite corner observation</label>
+			<label for="oppcornerobserve">Opposite corner observations</label>
 			<select id="oppcornerobserve" fieldtype_id="102">
 				<option value="0">[Select]</option>
 				<option value="119">Curb Cut</option>
-				<option value="120">Turncated Domes</option>
+				<option value="120">Truncated Domes</option>
 			</select>
 			</p>
 			<p>
-			<label for="crosswalkobserve">Crosswalk observation</label>
+			<label for="crosswalkobserve">Crosswalk observations</label>
 			<select id="crosswalkobserve" fieldtype_id="103">
 				<option value="0">[Select]</option>
 				<option value="119">Curb Cut</option>
-				<option value="120">Turncated Domes</option>
+				<option value="120">Truncated Domes</option>
 			</select>
 			</p>
-
+			<p>
+				<label for="comments">Any Comments</label>						
+				<textarea id="comments" name="comments" fieldtype_id="20" rows="5" cols="50"></textarea>
+			</p>
+			<p>
+				<label for="otherinfo">Other Information</label>						
+				<textarea id="otherinfo" name="otherinfo" fieldtype_id="23" rows="5" cols="50"></textarea>
+			</p>
+			<p>
+				<label for="fileInput">Upload Photos</label>
+				<input type="file" id="fileInput" name="fileInput" fieldtype_id="71" accept="image/*" capture="camera" multiple/>				
+			</p>
 		</div>
 		
 		<h2>Intersection 2</h2>
@@ -508,6 +505,60 @@
 				<input type="radio" id="functionalaccess" name="functionalaccess" value="12" fieldtype_id = "50">Yes
 				<input type="radio" name="functionalaccess" value="13" fieldtype_id = "50">No
 				<input type="radio" name="functionalaccess" value="14" fieldtype_id = "50">Not Applicable
+			</p>			
+			<p>
+				<label for="sidewalkwidth">What is sidewalk's width in the narrowest point?</label>
+				<input type="text" id="sidewalkwidth" name="sidewalkwidth" fieldtype_id="93">
+			</p>
+			<p>
+				<label for="sidewalkslope">What is sidewalk's slope?</label>
+				<input type="text" id="sidewalkslope" name="sidewalkslope" fieldtype_id="94">
+			</p>
+			<p>
+				<label for="obstacles">Obstacles type/measurements</label><br />
+				<input type="checkbox" id="obstacles1" name="obstacles" fieldtype_id="97" value="112">PO Box<br />
+					<input type="text" name="obstacles" fieldtype_id="97"><br />
+				<input type="checkbox" name="obstacles" fieldtype_id="97" value="113">Newspaper<br />
+					<input type="text" name="obstacles" fieldtype_id="97"><br />
+				<input type="checkbox" name="obstacles" fieldtype_id="97" value="114">Light Pole<br />
+					<input type="text" name="obstacles" fieldtype_id="97"><br />
+				<input type="checkbox" name="obstacles" fieldtype_id="97" value="115">Trash<br />
+					<input type="text" name="obstacles" fieldtype_id="97"><br />
+				<input type="checkbox" name="obstacles" fieldtype_id="97" value="116">Utility Box<br />
+					<input type="text" name="obstacles" fieldtype_id="97"><br />
+			</p>
+			<p>
+				<label for="connectsidestop">Is sidewalk seemlessly connected to bus stop area?</label>
+				<input type="radio" id="connectsidestop" name="connectsidestop" value="12" fieldtype_id = "96">Yes
+				<input type="radio" name="connectsidestop" value="13" fieldtype_id = "96">No
+				<input type="radio" name="connectsidestop" value="14" fieldtype_id = "96">Not Applicable
+			</p>
+			<p>
+				<label for="conditionofsidewalk">Condition of sidewalk</label>
+				<select id="conditionofsidewalk" fieldtype_id="95">
+					<option value="0">[Select]</option>
+					<option value="67">1</option>
+					<option value="68">2</option>
+					<option value="69">3</option>
+					<option value="70">4</option>
+					<option value="71">5</option>
+				</select>
+			</p>			
+			<p>
+			<label for="oppcornerobserve">Opposite corner observations</label>
+			<select id="oppcornerobserve" fieldtype_id="102">
+				<option value="0">[Select]</option>
+				<option value="119">Curb Cut</option>
+				<option value="120">Truncated Domes</option>
+			</select>
+			</p>
+			<p>
+			<label for="crosswalkobserve">Crosswalk observations</label>
+			<select id="crosswalkobserve" fieldtype_id="103">
+				<option value="0">[Select]</option>
+				<option value="119">Curb Cut</option>
+				<option value="120">Truncated Domes</option>
+			</select>
 			</p>
 			<p>
 				<label for="comments">Any Comments</label>						
@@ -520,60 +571,6 @@
 			<p>
 				<label for="fileInput">Upload Photos</label>
 				<input type="file" id="fileInput" name="fileInput" fieldtype_id="71" accept="image/*" capture="camera" multiple/>				
-			</p>
-			<p>
-				<label for="sidewalkwidth">What is sidewalk's width in the narrowest point?</label>
-				<input type="text" id="sidewalkwidth" name="sidewalkwidth" fieldtype_id="93">
-			</p>
-			<p>
-				<label for="sidewalkslope">What is sidewalk's slope?</label>
-				<input type="text" id="sidewalkslope" name="sidewalkslope" fieldtype_id="94">
-			</p>
-			<p>
-				<label for="connectsidestop">Is sidewalk seemlessly connected to bus area?</label>
-				<input type="radio" id="connectsidestop" name="connectsidestop" value="12" fieldtype_id = "96">Yes
-				<input type="radio" name="connectsidestop" value="13" fieldtype_id = "???">No
-				<input type="radio" name="connectsidestop" value="14" fieldtype_id = "???">Not Applicable
-			</p>
-			<p>
-				<label for="conditionofsidewalk">Condition of sidewalk</label>
-				<select id="conditionofsidewalk" fieldtype_id="95">
-					<option value="0">[Select]</option>
-					<option value="67">1</option>
-					<option value="68">2</option>
-					<option value="69">3</option>
-					<option value="70">4</option>
-					<option value="71">5</option>
-				</select>
-			</p>
-			<p>
-			<label for="obstacles">Obstacles</label><br />
-			<input type="checkbox" id="obstacles2" name="obstacles" fieldtype_id="97" value="112">PO Box<br />
-				<input type="text" name="obstacles" fieldtype_id="97"><br />
-			<input type="checkbox" name="obstacles" fieldtype_id="97" value="113">Newspaper<br />
-				<input type="text" name="obstacles" fieldtype_id="97"><br />
-			<input type="checkbox" name="obstacles" fieldtype_id="97" value="114">Light Pole<br />
-				<input type="text" name="obstacles" fieldtype_id="97"><br />
-			<input type="checkbox" name="obstacles" fieldtype_id="97" value="115">Trash<br />
-				<input type="text" name="obstacles" fieldtype_id="97"><br />
-			<input type="checkbox" name="obstacles" fieldtype_id="97" value="116">Utility Box<br />
-				<input type="text" name="obstacles" fieldtype_id="97"><br />
-			</p>
-			<p>
-			<label for="oppcornerobserve">Opposite corner observation</label>
-			<select id="oppcornerobserve" fieldtype_id="102">
-				<option value="0">[Select]</option>
-				<option value="119">Curb Cut</option>
-				<option value="120">Turncated Domes</option>
-			</select>
-			</p>
-			<p>
-			<label for="crosswalkobserve">Crosswalk observation</label>
-			<select id="crosswalkobserve" fieldtype_id="103">
-				<option value="0">[Select]</option>
-				<option value="119">Curb Cut</option>
-				<option value="120">Turncated Domes</option>
-			</select>
 			</p>
 		</div>
 		
@@ -593,18 +590,10 @@
 					<option value="55">> 70" but <= 120"</option>													
 					<option value="56">> 120"</option>
 				</select>
-			</p>			
-			<p>
-				<label for="otherinfo">Other Information</label>						
-				<textarea id="otherinfo" name="otherinfo" fieldtype_id="23" rows="5" cols="50"></textarea>
-			</p>
-			<p>
-				<label for="fileInput">Upload Photos</label>
-				<input type="file" id="fileInput" name="fileInput" fieldtype_id="71" accept="image/*" capture="camera" multiple/>				
 			</p>
 			<!-- New Fields Start -->
 			<p>
-				<label for="providername">What provider name is on the bus stop?</label>
+				<label for="providername">What is the provider name on the bus stop?</label>
 				<input type="text" id="providername" name="providername" fieldtype_id="78">
 			</p>
 			<p>
@@ -628,6 +617,15 @@
 				</select>
 			</p>
 			<!-- New Fields End -->
+			<p>
+				<label for="otherinfo">Other Information</label>						
+				<textarea id="otherinfo" name="otherinfo" fieldtype_id="23" rows="5" cols="50"></textarea>
+			</p>
+			<p>
+				<label for="fileInput">Upload Photos</label>
+				<input type="file" id="fileInput" name="fileInput" fieldtype_id="71" accept="image/*" capture="camera" multiple/>				
+			</p>
+			
 		</div>
 		
 		<h2>Lighting</h2>
@@ -637,6 +635,15 @@
 				<input type="radio" id="lightpresent" name="lightpresent" value="12" fieldtype_id = "53">Yes
 				<input type="radio" name="lightpresent" value="13" fieldtype_id = "53">No
 				<input type="radio" name="lightpresent" value="14" fieldtype_id = "53">Not Applicable
+			</p>
+			<p>
+				<label for="streetlightobserve">Street light observation</label>
+				<select id="streetlightobserve" fieldtype_id="81">
+					<option value="0">[Select]</option>
+					<option value="105">In bus zone</option>
+					<option value="106">Within 50"</option>
+					<option value="107">None</option>
+				</select>
 			</p>
 			<p>
 				<label for="comments">Any Comments</label>						
@@ -650,16 +657,6 @@
 				<label for="fileInput">Upload Photos</label>
 				<input type="file" id="fileInput" name="fileInput" fieldtype_id="71" accept="image/*" capture="camera" multiple/>				
 			</p>
-			<p>
-				<label for="streetlightobserve">Street light observation</label>
-				<select id="streetlightobserve" fieldtype_id="81">
-					<option value="0">[Select]</option>
-					<option value="105">In bus zone</option>
-					<option value="106">Within 50"</option>
-					<option value="107">None</option>
-				</select>
-			</p>
-			
 		</div>
 		
 		<h2>Landscaping</h2>
@@ -685,24 +682,29 @@
 		</div>				
 		
 		<h2>Other Amenities</h2>
-		<div id="section8">
+		<div id="section8">			
 			<p>
 				<label for="transitinfopresent">Is the Transit Information present?</label>
 				<input type="radio" id="transitinfopresent" name="transitinfopresent" value="12" fieldtype_id = "55">Yes
 				<input type="radio" name="transitinfopresent" value="13" fieldtype_id = "55">No
 				<input type="radio" name="transitinfopresent" value="14" fieldtype_id = "55">Not Applicable
-			</p>
-			<p>
-				<label for="benchpresent">Is there any Bench present?</label>
-				<input type="radio" id="benchpresent" name="benchpresent" value="12" fieldtype_id = "56">Yes
-				<input type="radio" name="benchpresent" value="13" fieldtype_id = "56">No
-				<input type="radio" name="benchpresent" value="14" fieldtype_id = "56">Not Applicable
-			</p>
+			</p>			
 			<p>
 				<label for="trashcanpresent">Is there a Trash Can present?</label>
 				<input type="radio" id="trashcanpresent" name="trashcanpresent" value="12" fieldtype_id = "57">Yes
 				<input type="radio" name="trashcanpresent" value="13" fieldtype_id = "57">No
 				<input type="radio" name="trashcanpresent" value="14" fieldtype_id = "57">Not Applicable
+			</p>
+			<p>
+				<label for="trashcondition">What is the Condition of trash(If Present)</label>
+				<select id="trashcondition" fieldtype_id="84">
+					<option value="0">[Select]</option>
+					<option value="67">1</option>
+					<option value="68">2</option>
+					<option value="69">3</option>
+					<option value="70">4</option>
+					<option value="71">5</option>
+				</select>
 			</p>
 			<p>
 				<label for="bikerackpresent">Is there a Bike Rack present?</label>
@@ -721,29 +723,20 @@
 				<input type="radio" id="sidewalkpresent" name="sidewalkpresent" value="12" fieldtype_id = "60">Yes
 				<input type="radio" name="sidewalkpresent" value="13" fieldtype_id = "60">No
 				<input type="radio" name="sidewalkpresent" value="14" fieldtype_id = "60">Not Applicable
-			</p>
+			</p>			
+			
 			<p>
-				<label for="comments">Any Comments</label>						
-				<textarea id="comments" name="comments" fieldtype_id="20" rows="5" cols="50"></textarea>
-			</p>
-			<p>
-				<label for="otherinfo">Other Information</label>						
-				<textarea id="otherinfo" name="otherinfo" fieldtype_id="23" rows="5" cols="50"></textarea>
-			</p>
-			<p>
-				<label for="fileInput">Upload Photos</label>
-				<input type="file" id="fileInput" name="fileInput" fieldtype_id="71" accept="image/*" capture="camera" multiple/>				
-			</p>
-			<p>
-				<label for="otherammenities">What ammenities presnt?</label>
-				<input type="text" id="otherammenities" name="otherammenities" fieldtype_id="92">
-			</p>
-			<p>
-				<label for="seattype">What is seating type?</label>
+				<label for="seattype">What is Seating type?</label>
 				<input type="text" id="seattype" name="seattype" fieldtype_id="82">
 			</p>
 			<p>
-				<label for="seatcondition">Condition of seating</label>
+				<label for="benchpresent">Is there any Bench present?</label>
+				<input type="radio" id="benchpresent" name="benchpresent" value="12" fieldtype_id = "56">Yes
+				<input type="radio" name="benchpresent" value="13" fieldtype_id = "56">No
+				<input type="radio" name="benchpresent" value="14" fieldtype_id = "56">Not Applicable
+			</p>
+			<p>
+				<label for="seatcondition">Condition of seating(If Present)</label>
 				<select id="seatcondition" fieldtype_id="83">
 					<option value="0">[Select]</option>
 					<option value="67">1</option>
@@ -752,22 +745,28 @@
 					<option value="70">4</option>
 					<option value="71">5</option>
 				</select>
-			</p>
+			</p>					
 			<p>
-				<label for="trashcondition">Condition of trash</label>
-				<select id="trashcondition" fieldtype_id="84">
-					<option value="0">[Select]</option>
-					<option value="67">1</option>
-					<option value="68">2</option>
-					<option value="69">3</option>
-					<option value="70">4</option>
-					<option value="71">5</option>
-				</select>
+				<label for="otherammenities">Any other amenities present?</label>
+				<input type="text" id="otherammenities" name="otherammenities" fieldtype_id="92">
 			</p>
-			<p>
+			<!--<p>
 				<label for="obstacletype">What is the type of obstacle?</label>
 				<input type="text" id="obstacletype" name="obstcaletype" fieldtype_id="85">
+			</p>-->
+			<p>
+				<label for="obstacles">Any Obstacles type</label><br />
+				<input type="checkbox" id="obstacles1" name="obstacles" fieldtype_id="97" value="112">PO Box<br />					
+				<input type="checkbox" name="obstacles" fieldtype_id="97" value="113">Newspaper<br />					
+				<input type="checkbox" name="obstacles" fieldtype_id="97" value="114">Light Pole<br />					
+				<input type="checkbox" name="obstacles" fieldtype_id="97" value="115">Trash<br />					
+				<input type="checkbox" name="obstacles" fieldtype_id="97" value="116">Utility Box<br />					
 			</p>
+			<p>
+				<label for="comments">Any Comments</label>						
+				<textarea id="comments" name="comments" fieldtype_id="20" rows="5" cols="50"></textarea>
+			</p>
+			
 		</div>
 		<!-- New Sections -->
 		<h2>Landing Area</h2>
@@ -805,7 +804,7 @@
 				<input type="text" id="landingareaobservations" name="landingareaobservations" fieldtype_id="91">
 			</p>
 			<p>
-				<label for="landingpadconnecttosidewalk">Does landing pad connect to sidealk?</label>
+				<label for="landingpadconnecttosidewalk">Does landing pad connect to sidwealk?</label>
 				<input type="radio" id="landingpadconnecttosidewalk" name="landingpadconnecttosidewalk" value="12" fieldtype_id = "92">Yes
 				<input type="radio" name="landingpadconnecttosidewalk" value="13" fieldtype_id = "92">No
 				<input type="radio" name="landingpadconnecttosidewalk" value="14" fieldtype_id = "92">Not Applicable
@@ -813,6 +812,14 @@
 			<p>
 				<label for="comments">Any Comments</label>						
 				<textarea id="comments" name="comments" fieldtype_id="20" rows="5" cols="50"></textarea>
+			</p>
+			<p>
+				<label for="otherinfo">Other Information</label>						
+				<textarea id="otherinfo" name="otherinfo" fieldtype_id="23" rows="5" cols="50"></textarea>
+			</p>
+			<p>
+				<label for="fileInput">Upload Photos</label>
+				<input type="file" id="fileInput" name="fileInput" fieldtype_id="71" accept="image/*" capture="camera" multiple/>				
 			</p>
 		</div>
 		<h2>Sidewalk</h2>
@@ -836,10 +843,21 @@
 					<option value="71">5</option>
 				</select>
 			</p>
-		</div>
-		
-</div>
-<input type="hidden" name="busstopData" id="busstopData"/>
+			<p>
+				<label for="comments">Any Comments</label>						
+				<textarea id="comments" name="comments" fieldtype_id="20" rows="5" cols="50"></textarea>
+			</p>
+			<p>
+				<label for="otherinfo">Other Information</label>						
+				<textarea id="otherinfo" name="otherinfo" fieldtype_id="23" rows="5" cols="50"></textarea>
+			</p>
+			<p>
+				<label for="fileInput">Upload Photos</label>
+				<input type="file" id="fileInput" name="fileInput" fieldtype_id="71" accept="image/*" capture="camera" multiple/>				
+			</p>
+		</div>		
+	</div>
+	<input type="hidden" name="busstopData" id="busstopData"/>
 </form>
 <script src="scripts/parse.js"></script>
 <script src="scripts/mainpage.js"></script>
