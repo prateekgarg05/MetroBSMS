@@ -30,7 +30,7 @@
 <div id="info">
 <form id="myform">
 	<div id="wizard" >
-		<h2>Identification/Location</h2>
+		<h2>General</h2>
 		<div id="section9">
 			<p>
 				<label for="busstopid">Bus Stop ID</label>
@@ -80,61 +80,12 @@
 					<option value="64">Near</option>
 					<option value="65">Far</option>
 					<option value="66">Mid-block</option>
-<!--  New values--> <option value="72">Not near an intersection</option>
-					<option value="73">Freeway bus pad</option> <!-- End NEW -->
 				</select>
 			</p>
 			<p>
 				<label for="jurisdiction">Jurisdiction</label>
 				<input id="jurisdiction" name="jurisdiction" type="text" fieldtype_id = "70">
-			</p>	
-			
-			<!-- New Fields Start -->
-			<p>
-				<label for="purposeofstop">What is the purpose of stop?</label>
-				<select id="purposeofstop" fieldtype_id="72">
-					<option value="0">[Select]</option>
-					<option value="76">Park and Ride</option>
-					<option value="77">Kiss and Ride</option>
-					<option value="78">Boarding</option>
-					<option value="79">Alighting</option>
-					<option value="80">Both Boarding and Alighting</option>
-					<option value="81">Transfer</option> 
-				</select>
-			</p>
-			<p>
-				<label for="distancetocurb">Distance from bus stop to curb of cross street in feet</label>
-				<input id="distancetocurb" name="distancetocurb" type="text" fieldtype_id="73">
-			</p>
-			<p>
-				<label for="adjacentproperty">Adjacent property description</label>
-					<input type="checkbox" name="adjacentproperty" value="82" fieldtype_id="74" >Apartment Building
-					<input type="checkbox" name="adjacentproperty" value="83" fieldtype_id="74" >Day Care
-					<input type="checkbox" name="adjacentproperty" value="84" fieldtype_id="74" >Government Building
-					<input type="checkbox" name="adjacentproperty" value="85" fieldtype_id="74" >Hospital
-					<input type="checkbox" name="adjacentproperty" value="86" fieldtype_id="74" >Human Service Agency
-					<input type="checkbox" name="adjacentproperty" value="87" fieldtype_id="74" >Industrial Site/Bldg.
-					<input type="checkbox" name="adjacentproperty" value="88" fieldtype_id="74" >Library
-					<input type="checkbox" name="adjacentproperty" value="89" fieldtype_id="74" >Mall/Shopping Center
-					<input type="checkbox" name="adjacentproperty" value="90" fieldtype_id="74" >Nursing Home
-					<input type="checkbox" name="adjacentproperty" value="91" fieldtype_id="74" >Office Building
-					<input type="checkbox" name="adjacentproperty" value="92" fieldtype_id="74" >Park
-					<input type="checkbox" name="adjacentproperty" value="93" fieldtype_id="74" >Park and Ride
-					<input type="checkbox" name="adjacentproperty" value="94" fieldtype_id="74" >Place of Worship
-					<input type="checkbox" name="adjacentproperty" value="95" fieldtype_id="74" >Residence-townhouse
-					<input type="checkbox" name="adjacentproperty" value="96" fieldtype_id="74" >Residence-detached
-					<input type="checkbox" name="adjacentproperty" value="97" fieldtype_id="74" >Retail Store
-					<input type="checkbox" name="adjacentproperty" value="98" fieldtype_id="74" >School
-					<input type="checkbox" name="adjacentproperty" value="99" fieldtype_id="74" >Supermarket
-					<input type="checkbox" name="adjacentproperty" value="100" fieldtype_id="74" >Transit station/center
-					<input type="checkbox" name="adjacentproperty" value="101" fieldtype_id="74" >Vacant lot
-			</p>
-			<p>
-				<label for="distancefrompreviousbusstop">Distance from previous bus stop (in feet)</label>
-				<input id="distancefrompreviousbusstop" name="distancefrompreviousbusstop" type="text" fieldtype_id="75">
-			</p>
-
-			<!-- New Fields End  -->			
+			</p>				
 		</div>
 
 		<h2>Boarding & Alighting</h2>
@@ -168,12 +119,91 @@
 				<input type="radio" name="dedicatedpad" value="14" fieldtype_id = "4">Not Applicable
 			</p>
 			<p>
-				<label for="padwidth">What is the Bus Stop Width?</label>
+				<label for="dateconstructed">When was it constructed?</label>
+				<input id="dateconstructed" name="dateconstructed" type="date" fieldtype_id = "5">
+			</p>
+			<p>
+				<label for="padwidth">What is the Pad Width?</label>
 				<input id="padwidth" name="padwidth" type="text" fieldtype_id = "6">
 			</p>
 			<p>
-				<label for="paddepth">What is the Bus Stop Depth?</label>
+				<label for="paddepth">What is the Pad Depth?</label>
 				<input id="paddepth" name="paddepth" type="text" fieldtype_id = "7">
+			</p>
+			<p>
+				<label for="slopetype">Which type of Slope?</label>
+				<select id="slopetype" fieldtype_id = "8">
+					<option value="0">[Select]</option>
+					<option value="57">Same as Roadway</option>
+					<option value="58">Not Same as Roadway</option>													
+				</select>
+			</p>
+			<p>
+				<label for="pedpath">What kind of Pedestrian Path?</label>
+				<select id="pedpath" fieldtype_id = "9">
+					<option value="0">[Select]</option>
+					<option value="19">Sidewalk</option>
+					<option value="20">Berm of Road</option>													
+					<option value="21">None</option>
+				</select>
+			</p>
+			<p>
+				<label for="boarding">Is there boarding?</label>
+				<input type="radio" id="boarding" name="boarding" value="12" fieldtype_id = "10">Yes
+				<input type="radio" name="boarding" value="13" fieldtype_id = "10">No
+				<input type="radio" name="boarding" value="14" fieldtype_id = "10">Not Applicable
+			</p>
+			<p>
+				<label for="connectionwidth">What is the Connection Width?</label>
+				<select id="connectionwidth" fieldtype_id = "11">
+					<option value="0">[Select]</option>
+					<option value="22">>= 36 inches</option>
+					<option value="23">< 36 inches</option>							
+				</select>
+			</p>
+			<p>
+				<label for="60x96">Is it 60x96?</label>
+				<input type="radio" id="60x96" name="60x96" value="12" fieldtype_id = "12">Yes
+				<input type="radio" name="60x96" value="13" fieldtype_id = "12">No
+				<input type="radio" name="60x96" value="14" fieldtype_id = "12">Not Applicable
+			</p>
+			<p>
+				<label for="60x100">Is it 60x100?</label>
+				<input type="radio" id="60x100" name="60x100" value="12" fieldtype_id = "13">Yes
+				<input type="radio" name="60x100" value="13" fieldtype_id = "13">No
+				<input type="radio" name="60x100" value="14" fieldtype_id = "13">Not Applicable
+			</p>
+			<p>
+				<label for="runningslope">What is the gradient of the Running Slope?</label>
+				<select id="runningslope" fieldtype_id = "14">
+					<option value="0">[Select]</option>
+					<option value="24"><= 5%</option>
+					<option value="25">> 5%</option>							
+				</select>
+			</p>
+			<p>
+				<label for="crossslope">What is the gradient of the Cross Slope?</label>
+				<select id="crossslope" fieldtype_id = "15">
+					<option value="0">[Select]</option>
+					<option value="26"><= 2%</option>
+					<option value="27">> 2%</option>							
+				</select>
+			</p>
+			<p>
+				<label for="crossslope">How much is the Vertical Transition?</label>
+				<select id="crossslope" fieldtype_id = "16">
+					<option value="0">[Select]</option>
+					<option value="28"><= 1/2%</option>
+					<option value="29">> 1/2%</option>							
+				</select>
+			</p>
+			<p>
+				<label for="crossslope">How much is the Horizontal Gap?</label>
+				<select id="crossslope" fieldtype_id = "17">
+					<option value="0">[Select]</option>
+					<option value="28"><= 1/2%</option>
+					<option value="29">> 1/2%</option>							
+				</select>
 			</p>
 			<p>
 				<label for="freeobstruction">Is it free of Obstruction?</label>
@@ -186,6 +216,12 @@
 				<input type="radio" id="adacompliant" name="adacompliant" value="30" fieldtype_id = "19">Yes
 				<input type="radio" name="adacompliant" value="31" fieldtype_id = "19">No, Needs Correction
 				<input type="radio" name="adacompliant" value="32" fieldtype_id = "19">No, Pre-dates ADA
+			</p>
+			<p>
+				<label for="cbccompliant">Is it CBC Compliant?</label>
+				<input type="radio" id="cbccompliant" name="cbccompliant" value="33" fieldtype_id = "22">Yes
+				<input type="radio" name="cbccompliant" value="34" fieldtype_id = "22">No, Needs Correction
+				<input type="radio" name="cbccompliant" value="35" fieldtype_id = "22">No, Pre-dates 2013 CBC
 			</p>
 			<p>
 				<label for="comments">Any Comments</label>						
@@ -210,6 +246,22 @@
 				<input type="radio" name="shelterpresent" value="14" fieldtype_id = "24">Not Applicable
 			</p>
 			<p>
+				<label for="dateinstalled">When was it installed?</label>
+				<input id="dateinstalled" name="dateinstalled" type="date" fieldtype_id = "25">
+			</p>
+			<p>
+				<label for="owner">Who is the Owner?</label>
+				<select id="owner" fieldtype_id = "26">
+					<option value="0">[Select]</option>
+					<option value="36">Metro</option>
+					<option value="37">Other</option>							
+				</select>
+			</p>
+			<p>
+				<label for="ownername">What is the Owner Name?</label>
+				<input id="ownername" name="ownername" type="text" fieldtype_id = "27">
+			</p>
+			<p>
 				<label for="sheltertype">Which type of Shelter</label>
 				<select id="sheltertype" fieldtype_id = "28">
 					<option value="0">[Select]</option>
@@ -220,10 +272,96 @@
 				</select>
 			</p>
 			<p>
+				<label for="30x48">Is it 30x48?</label>
+				<input type="radio" id="30x48" name="30x48" value="12" fieldtype_id = "30">Yes
+				<input type="radio" name="30x48" value="13" fieldtype_id = "30">No
+				<input type="radio" name="30x48" value="14" fieldtype_id = "30">Not Applicable
+			</p>
+			<p>
+				<label for="30x52">Is it 30x52?</label>
+				<input type="radio" id="30x52" name="30x52" value="12" fieldtype_id = "36">Yes
+				<input type="radio" name="30x52" value="13" fieldtype_id = "36">No
+				<input type="radio" name="30x52" value="14" fieldtype_id = "36">Not Applicable
+			</p>
+			<p>
+				<label for="forwardfacing">What is the Forward Facing size?</label>
+				<select id="forwardfacing" fieldtype_id = "31">
+					<option value="0">[Select]</option>
+					<option value="45">>= 36"x48"</option>
+					<option value="46">< 36"x48"</option>							
+				</select>
+			</p>
+			<p>
+				<label for="sideways">What is the Sideways size?</label>
+				<select id="sideways" fieldtype_id = "31">
+					<option value="0">[Select]</option>
+					<option value="47">>= 30"x60"</option>
+					<option value="48">< 30"x60"</option>							
+				</select>
+			</p>
+			<p>
 				<label for="wcfloorareaconfined">Is the Wheel Chair Floor Area confined?</label>
 				<input type="radio" id="wcfloorarea" name="wcfloorarea" value="12" fieldtype_id = "29">Yes
 				<input type="radio" name="wcfloorarea" value="13" fieldtype_id = "29">No
 				<input type="radio" name="wcfloorarea" value="14" fieldtype_id = "29">Not Applicable
+			</p>
+			<p>
+				<label for="wcfloorareshelter">Is the Wheel Chair Floor Area in shelter?</label>
+				<input type="radio" id="wcfloorareshelter" name="wcfloorareshelter" value="12" fieldtype_id = "33">Yes
+				<input type="radio" name="wcfloorareshelter" value="13" fieldtype_id = "33">No
+				<input type="radio" name="wcfloorareshelter" value="14" fieldtype_id = "33">Not Applicable
+			</p>
+			<p>
+				<label for="wcfloorareaadjoin">Is the Wheel Chair Floor Area adjoined?</label>
+				<input type="radio" id="wcfloorareaadjoin" name="wcfloorareaadjoin" value="12" fieldtype_id = "34">Yes
+				<input type="radio" name="wcfloorareaadjoin" value="13" fieldtype_id = "34">No
+				<input type="radio" name="wcfloorareaadjoin" value="14" fieldtype_id = "34">Not Applicable
+			</p>
+			<p>
+				<label for="wcfloorareaconnect">Is the Wheel Chair Floor Area connected to the Board?</label>
+				<input type="radio" id="wcfloorareaconnect" name="wcfloorareaconnect" value="12" fieldtype_id = "35">Yes
+				<input type="radio" name="wcfloorareaconnect" value="13" fieldtype_id = "35">No
+				<input type="radio" name="wcfloorareaconnect" value="14" fieldtype_id = "35">Not Applicable
+			</p>
+			<p>
+				<label for="connectionwidth">What is the Connection Width?</label>
+				<select id="connectionwidth" fieldtype_id = "11">
+					<option value="0">[Select]</option>
+					<option value="22">>= 36 inches</option>
+					<option value="23">< 36 inches</option>							
+				</select>
+			</p>
+			<p>
+				<label for="runningslope">What is the gradient of the Running Slope?</label>
+				<select id="runningslope" fieldtype_id = "14">
+					<option value="0">[Select]</option>
+					<option value="24"><= 5%</option>
+					<option value="25">> 5%</option>							
+				</select>
+			</p>
+			<p>
+				<label for="crossslope">What is the gradient of the Cross Slope?</label>
+				<select id="crossslope" fieldtype_id = "15">
+					<option value="0">[Select]</option>
+					<option value="26"><= 2%</option>
+					<option value="27">> 2%</option>							
+				</select>
+			</p>
+			<p>
+				<label for="crossslope">How much is the Vertical Transition?</label>
+				<select id="crossslope" fieldtype_id = "16">
+					<option value="0">[Select]</option>
+					<option value="28"><= 1/2%</option>
+					<option value="29">> 1/2%</option>							
+				</select>
+			</p>
+			<p>
+				<label for="crossslope">How much is the Horizontal Gap?</label>
+				<select id="crossslope" fieldtype_id = "17">
+					<option value="0">[Select]</option>
+					<option value="28"><= 1/2%</option>
+					<option value="29">> 1/2%</option>							
+				</select>
 			</p>
 			<p>
 				<label for="surfacetype">What is the Surface Type?</label>
@@ -248,6 +386,18 @@
 				<input type="radio" name="freeobstruction" value="14" fieldtype_id = "18">Not Applicable
 			</p>
 			<p>
+				<label for="adacompliant">Is it ADA Compliant?</label>
+				<input type="radio" id="adacompliant" name="adacompliant" value="30" fieldtype_id = "19">Yes
+				<input type="radio" name="adacompliant" value="31" fieldtype_id = "19">No, Needs Correction
+				<input type="radio" name="adacompliant" value="32" fieldtype_id = "19">No, Pre-dates ADA
+			</p>
+			<p>
+				<label for="cbccompliant">Is it CBC Compliant?</label>
+				<input type="radio" id="cbccompliant" name="cbccompliant" value="33" fieldtype_id = "22">Yes
+				<input type="radio" name="cbccompliant" value="34" fieldtype_id = "22">No, Needs Correction
+				<input type="radio" name="cbccompliant" value="35" fieldtype_id = "22">No, Pre-dates 2013 CBC
+			</p>
+			<p>
 				<label for="comments">Any Comments</label>						
 				<textarea id="comments" name="comments" fieldtype_id="20" rows="5" cols="50"></textarea>
 			</p>
@@ -259,17 +409,6 @@
 				<label for="fileInput">Upload Photos</label>
 				<input type="file" id="fileInput" name="fileInput" fieldtype_id="71" accept="image/*" capture="camera" multiple/>				
 			</p>
-			
-			<!-- New Fields -->
-			<p>
-				<label for="distancefromsheltertocurb">Whats is the disance from shelter to curb?</label>
-				<input type="text" id="distancefromsheltertocurb" name="distancefromsheltertocurb" fieldtype_id="76">
-			</p>
-			<p>
-				<label for="clearspacemeasurements">Clear space measurements for wheelchairs</label>
-				<input type="text" id="clearspacemeasurements" name="clearspacemeasurements" fieldtype_id="77">
-			</p>
-			
 		</div>
 
 		<h2>Intersection 1</h2>
@@ -329,6 +468,14 @@
 				<input type="radio" name="functionalcurbramps" value="14" fieldtype_id = "45">Not Applicable
 			</p>
 			<p>
+				<label for="numcurbramps">How many curb ramps are needed?</label>
+				<input id="numcurbramps" name="numcurbramps" type="text" fieldtype_id = "46">
+			</p>
+			<p>
+				<label for="missingcurbramps">Describe the missing curb ramps (If any)</label>
+				<input id="missingcurbramps" name="missingcurbramps" type="text" fieldtype_id = "47">
+			</p>
+			<p>
 				<label for="midcrossingislands">Are the mid crossing islands present?</label>
 				<input type="radio" id="midcrossingislands" name="midcrossingislands" value="12" fieldtype_id = "48">Yes
 				<input type="radio" name="midcrossingislands" value="13" fieldtype_id = "48">No
@@ -358,81 +505,6 @@
 				<label for="fileInput">Upload Photos</label>
 				<input type="file" id="fileInput" name="fileInput" fieldtype_id="71" accept="image/*" capture="camera" multiple/>				
 			</p>
-			<p>
-				<label for="sidewalkwidth">What is sidewalk's width in the narrowest point?</label>
-				<input type="text" id="sidewalkwidth" name="sidewalkwidth" fieldtype_id="93">
-			</p>
-			<p>
-				<label for="sidewalkslope">What is sidewalk's slope?</label>
-				<input type="text" id="sidewalkslope" name="sidewalkslope" fieldtype_id="94">
-			</p>
-			<p>
-				<label for="connectsidestop">Is sidewalk seemlessly connected to bus area?</label>
-				<input type="radio" id="connectsidestop" name="connectsidestop" value="12" fieldtype_id = "96">Yes
-				<input type="radio" name="connectsidestop" value="13" fieldtype_id = "???">No
-				<input type="radio" name="connectsidestop" value="14" fieldtype_id = "???">Not Applicable
-			</p>
-			<p>
-				<label for="conditionofsidewalk">Condition of sidewalk</label>
-				<select id="conditionofsidewalk" fieldtype_id="95">
-					<option value="0">[Select]</option>
-					<option value="67">1</option>
-					<option value="68">2</option>
-					<option value="69">3</option>
-					<option value="70">4</option>
-					<option value="71">5</option>
-				</select>
-			</p>
-			<p>
-				<label for="obstacles">Obstacles</label><br />
-				<input type="checkbox" id="obstacles1" name="obstacles" fieldtype_id="97" value="112">PO Box<br />
-					<input type="text" name="obstacles" fieldtype_id="97"><br />
-				<input type="checkbox" name="obstacles" fieldtype_id="97" value="113">Newspaper<br />
-					<input type="text" name="obstacles" fieldtype_id="97"><br />
-				<input type="checkbox" name="obstacles" fieldtype_id="97" value="114">Light Pole<br />
-					<input type="text" name="obstacles" fieldtype_id="97"><br />
-				<input type="checkbox" name="obstacles" fieldtype_id="97" value="115">Trash<br />
-					<input type="text" name="obstacles" fieldtype_id="97"><br />
-				<input type="checkbox" name="obstacles" fieldtype_id="97" value="116">Utility Box<br />
-					<input type="text" name="obstacles" fieldtype_id="97"><br />
-			</p>
-			<p>
-				<label for="curbcutatint">Curb cut the intersection?</label>
-				<input type="radio" id="curbcutatint" name="curbcutatint" value="12" fieldtype_id = "98">Yes
-				<input type="radio" name="curbcutatint" value="13" fieldtype_id = "98">No
-				<input type="radio" name="curbcutatint" value="14" fieldtype_id = "98">Not Applicable
-			</p>
-			<p>
-				<label for="turncateddomespresents">Do Curb cut turncated domes present?</label>
-				<input type="radio" id="turncateddomespresents" name="turncateddomespresents" value="12" fieldtype_id = "99">Yes
-				<input type="radio" name="turncateddomespresents" value="13" fieldtype_id = "99">No
-				<input type="radio" name="turncateddomespresents" value="14" fieldtype_id = "99">Not Applicable
-			</p>
-			<p>
-				<label for="curbcutwidth">Curb Cut width</label>
-				<input type="text" id="curbcutwidth" name="curbcutwidth" fieldtype_id="100">
-			</p>
-			<p>
-				<label for="curbcutslope">Curb Cut Slope</label>
-				<input type="text" id="curbcutslope" name="curbcutslope" fieldtype_id="101">
-			</p>
-			<p>
-			<label for="oppcornerobserve">Opposite corner observation</label>
-			<select id="oppcornerobserve" fieldtype_id="102">
-				<option value="0">[Select]</option>
-				<option value="119">Curb Cut</option>
-				<option value="120">Turncated Domes</option>
-			</select>
-			</p>
-			<p>
-			<label for="crosswalkobserve">Crosswalk observation</label>
-			<select id="crosswalkobserve" fieldtype_id="103">
-				<option value="0">[Select]</option>
-				<option value="119">Curb Cut</option>
-				<option value="120">Turncated Domes</option>
-			</select>
-			</p>
-
 		</div>
 		
 		<h2>Intersection 2</h2>
@@ -492,6 +564,14 @@
 				<input type="radio" name="functionalcurbramps" value="14" fieldtype_id = "45">Not Applicable
 			</p>
 			<p>
+				<label for="numcurbramps">How many curb ramps are needed?</label>
+				<input id="numcurbramps" name="numcurbramps" type="text" fieldtype_id = "46">
+			</p>
+			<p>
+				<label for="missingcurbramps">Describe the missing curb ramps (If any)</label>
+				<input id="missingcurbramps" name="missingcurbramps" type="text" fieldtype_id = "47">
+			</p>
+			<p>
 				<label for="midcrossingislands">Are the mid crossing islands present?</label>
 				<input type="radio" id="midcrossingislands" name="midcrossingislands" value="12" fieldtype_id = "48">Yes
 				<input type="radio" name="midcrossingislands" value="13" fieldtype_id = "48">No
@@ -521,60 +601,6 @@
 				<label for="fileInput">Upload Photos</label>
 				<input type="file" id="fileInput" name="fileInput" fieldtype_id="71" accept="image/*" capture="camera" multiple/>				
 			</p>
-			<p>
-				<label for="sidewalkwidth">What is sidewalk's width in the narrowest point?</label>
-				<input type="text" id="sidewalkwidth" name="sidewalkwidth" fieldtype_id="93">
-			</p>
-			<p>
-				<label for="sidewalkslope">What is sidewalk's slope?</label>
-				<input type="text" id="sidewalkslope" name="sidewalkslope" fieldtype_id="94">
-			</p>
-			<p>
-				<label for="connectsidestop">Is sidewalk seemlessly connected to bus area?</label>
-				<input type="radio" id="connectsidestop" name="connectsidestop" value="12" fieldtype_id = "96">Yes
-				<input type="radio" name="connectsidestop" value="13" fieldtype_id = "???">No
-				<input type="radio" name="connectsidestop" value="14" fieldtype_id = "???">Not Applicable
-			</p>
-			<p>
-				<label for="conditionofsidewalk">Condition of sidewalk</label>
-				<select id="conditionofsidewalk" fieldtype_id="95">
-					<option value="0">[Select]</option>
-					<option value="67">1</option>
-					<option value="68">2</option>
-					<option value="69">3</option>
-					<option value="70">4</option>
-					<option value="71">5</option>
-				</select>
-			</p>
-			<p>
-			<label for="obstacles">Obstacles</label><br />
-			<input type="checkbox" id="obstacles2" name="obstacles" fieldtype_id="97" value="112">PO Box<br />
-				<input type="text" name="obstacles" fieldtype_id="97"><br />
-			<input type="checkbox" name="obstacles" fieldtype_id="97" value="113">Newspaper<br />
-				<input type="text" name="obstacles" fieldtype_id="97"><br />
-			<input type="checkbox" name="obstacles" fieldtype_id="97" value="114">Light Pole<br />
-				<input type="text" name="obstacles" fieldtype_id="97"><br />
-			<input type="checkbox" name="obstacles" fieldtype_id="97" value="115">Trash<br />
-				<input type="text" name="obstacles" fieldtype_id="97"><br />
-			<input type="checkbox" name="obstacles" fieldtype_id="97" value="116">Utility Box<br />
-				<input type="text" name="obstacles" fieldtype_id="97"><br />
-			</p>
-			<p>
-			<label for="oppcornerobserve">Opposite corner observation</label>
-			<select id="oppcornerobserve" fieldtype_id="102">
-				<option value="0">[Select]</option>
-				<option value="119">Curb Cut</option>
-				<option value="120">Turncated Domes</option>
-			</select>
-			</p>
-			<p>
-			<label for="crosswalkobserve">Crosswalk observation</label>
-			<select id="crosswalkobserve" fieldtype_id="103">
-				<option value="0">[Select]</option>
-				<option value="119">Curb Cut</option>
-				<option value="120">Turncated Domes</option>
-			</select>
-			</p>
 		</div>
 		
 		<h2>Bus Stop Sign</h2>
@@ -593,7 +619,19 @@
 					<option value="55">> 70" but <= 120"</option>													
 					<option value="56">> 120"</option>
 				</select>
-			</p>			
+			</p>
+			<p>
+				<label for="adacompliant">Is it ADA Compliant?</label>
+				<input type="radio" id="adacompliant" name="adacompliant" value="30" fieldtype_id = "19">Yes
+				<input type="radio" name="adacompliant" value="31" fieldtype_id = "19">No, Needs Correction
+				<input type="radio" name="adacompliant" value="32" fieldtype_id = "19">No, Pre-dates ADA
+			</p>
+			<p>
+				<label for="cbccompliant">Is it CBC Compliant?</label>
+				<input type="radio" id="cbccompliant" name="cbccompliant" value="33" fieldtype_id = "22">Yes
+				<input type="radio" name="cbccompliant" value="34" fieldtype_id = "22">No, Needs Correction
+				<input type="radio" name="cbccompliant" value="35" fieldtype_id = "22">No, Pre-dates 2013 CBC
+			</p>					
 			<p>
 				<label for="otherinfo">Other Information</label>						
 				<textarea id="otherinfo" name="otherinfo" fieldtype_id="23" rows="5" cols="50"></textarea>
@@ -602,32 +640,6 @@
 				<label for="fileInput">Upload Photos</label>
 				<input type="file" id="fileInput" name="fileInput" fieldtype_id="71" accept="image/*" capture="camera" multiple/>				
 			</p>
-			<!-- New Fields Start -->
-			<p>
-				<label for="providername">What provider name is on the bus stop?</label>
-				<input type="text" id="providername" name="providername" fieldtype_id="78">
-			</p>
-			<p>
-				<label for="conditionofsignage">Condition of signage</label>
-				<select id="conditionofsignage" fieldtype_id="79">
-					<option value="0">[Select]</option>
-					<option value="67">1</option>
-					<option value="68">2</option>
-					<option value="69">3</option>
-					<option value="70">4</option>
-					<option value="71">5</option>
-				</select>
-			</p>
-			<p>
-				<label for="buszonedelinaited">Bus zone clearly delineated by</label>
-				<select id="buszonedelinaited" fieldtype_id="80">
-					<option value="0">[Select]</option>
-					<option value="102">Red Curb</option>
-					<option value="103">Sign</option>
-					<option value="104">Nothing</option>
-				</select>
-			</p>
-			<!-- New Fields End -->
 		</div>
 		
 		<h2>Lighting</h2>
@@ -650,16 +662,6 @@
 				<label for="fileInput">Upload Photos</label>
 				<input type="file" id="fileInput" name="fileInput" fieldtype_id="71" accept="image/*" capture="camera" multiple/>				
 			</p>
-			<p>
-				<label for="streetlightobserve">Street light observation</label>
-				<select id="streetlightobserve" fieldtype_id="81">
-					<option value="0">[Select]</option>
-					<option value="105">In bus zone</option>
-					<option value="106">Within 50"</option>
-					<option value="107">None</option>
-				</select>
-			</p>
-			
 		</div>
 		
 		<h2>Landscaping</h2>
@@ -734,110 +736,8 @@
 				<label for="fileInput">Upload Photos</label>
 				<input type="file" id="fileInput" name="fileInput" fieldtype_id="71" accept="image/*" capture="camera" multiple/>				
 			</p>
-			<p>
-				<label for="otherammenities">What ammenities presnt?</label>
-				<input type="text" id="otherammenities" name="otherammenities" fieldtype_id="92">
-			</p>
-			<p>
-				<label for="seattype">What is seating type?</label>
-				<input type="text" id="seattype" name="seattype" fieldtype_id="82">
-			</p>
-			<p>
-				<label for="seatcondition">Condition of seating</label>
-				<select id="seatcondition" fieldtype_id="83">
-					<option value="0">[Select]</option>
-					<option value="67">1</option>
-					<option value="68">2</option>
-					<option value="69">3</option>
-					<option value="70">4</option>
-					<option value="71">5</option>
-				</select>
-			</p>
-			<p>
-				<label for="trashcondition">Condition of trash</label>
-				<select id="trashcondition" fieldtype_id="84">
-					<option value="0">[Select]</option>
-					<option value="67">1</option>
-					<option value="68">2</option>
-					<option value="69">3</option>
-					<option value="70">4</option>
-					<option value="71">5</option>
-				</select>
-			</p>
-			<p>
-				<label for="obstacletype">What is the type of obstacle?</label>
-				<input type="text" id="obstacletype" name="obstcaletype" fieldtype_id="85">
-			</p>
 		</div>
-		<!-- New Sections -->
-		<h2>Landing Area</h2>
-		<div id="section10">
-			<p>
-				<label for="landingareawidth">What is landing area width?</label>
-				<input type="text" id="landingareawidth" name="landingareawidth" fieldtype_id="86">
-			</p>
-			<p>
-				<label for="landingarealength">What is landing area length?</label>
-				<input type="text" id="landingarealength" name="landingarealength" fieldtype_id="87">
-			</p>
-			<p>
-				<label for="landingareaslope">What is landing area slope?</label>
-				<input type="text" id="landingareaslope" name="landingareaslope" fieldtype_id="88">
-			</p>
-			<p>
-				<label for="landingareapositioning">Landing area positioning is</label>
-				<select id="landingareapositioning" fieldtype_id="89">
-					<option value="0">[Select]</option>
-					<option value="108">Back from sign pole</option>
-					<option value="109">Forward from sign pole</option>
-				</select>
-			</p>
-			<p>
-				<label for="materialoflanding">Material of landing area is</label>
-				<select id="materialoflanding" fieldtype_id="90">
-					<option value="0">[Select]</option>
-					<option value="110">Paved</option>
-					<option value="111">Unpaved</option>
-				</select>
-			</p>
-			<p>
-				<label for="landingareaobservations">Landing area surface observations</label>
-				<input type="text" id="landingareaobservations" name="landingareaobservations" fieldtype_id="91">
-			</p>
-			<p>
-				<label for="landingpadconnecttosidewalk">Does landing pad connect to sidealk?</label>
-				<input type="radio" id="landingpadconnecttosidewalk" name="landingpadconnecttosidewalk" value="12" fieldtype_id = "92">Yes
-				<input type="radio" name="landingpadconnecttosidewalk" value="13" fieldtype_id = "92">No
-				<input type="radio" name="landingpadconnecttosidewalk" value="14" fieldtype_id = "92">Not Applicable
-			</p>
-			<p>
-				<label for="comments">Any Comments</label>						
-				<textarea id="comments" name="comments" fieldtype_id="20" rows="5" cols="50"></textarea>
-			</p>
-		</div>
-		<h2>Sidewalk</h2>
-		<div id="section11">
-			<p>
-				<label for="sidewalkwidth">What is sidewalk's width in the narrowest point?</label>
-				<input type="text" id="sidewalkwidth" name="sidewalkwidth" fieldtype_id="93">
-			</p>
-			<p>
-				<label for="sidewalkslope">What is sidewalk's slope?</label>
-				<input type="text" id="sidewalkslope" name="sidewalkslope" fieldtype_id="94">
-			</p>
-			<p>
-				<label for="conditionofsidewalk">Condition of sidewalk</label>
-				<select id="conditionofsidewalk" fieldtype_id="95">
-					<option value="0">[Select]</option>
-					<option value="67">1</option>
-					<option value="68">2</option>
-					<option value="69">3</option>
-					<option value="70">4</option>
-					<option value="71">5</option>
-				</select>
-			</p>
-		</div>
-		
+	</div>
 </div>
 <input type="hidden" name="busstopData" id="busstopData"/>
 </form>
