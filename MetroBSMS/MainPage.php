@@ -107,27 +107,35 @@
 				<input id="distancetocurb" name="distancetocurb" type="text" fieldtype_id="73">
 			</p>
 			<p>
-				<label for="adjacentproperty">Adjacent property description</label>
-					<input type="checkbox" name="adjacentproperty" value="82" fieldtype_id="74" >Apartment Building
-					<input type="checkbox" name="adjacentproperty" value="83" fieldtype_id="74" >Day Care
-					<input type="checkbox" name="adjacentproperty" value="84" fieldtype_id="74" >Government Building
-					<input type="checkbox" name="adjacentproperty" value="85" fieldtype_id="74" >Hospital
-					<input type="checkbox" name="adjacentproperty" value="86" fieldtype_id="74" >Human Service Agency
-					<input type="checkbox" name="adjacentproperty" value="87" fieldtype_id="74" >Industrial Site/Bldg.
-					<input type="checkbox" name="adjacentproperty" value="88" fieldtype_id="74" >Library
-					<input type="checkbox" name="adjacentproperty" value="89" fieldtype_id="74" >Mall/Shopping Center
-					<input type="checkbox" name="adjacentproperty" value="90" fieldtype_id="74" >Nursing Home
-					<input type="checkbox" name="adjacentproperty" value="91" fieldtype_id="74" >Office Building
-					<input type="checkbox" name="adjacentproperty" value="92" fieldtype_id="74" >Park
-					<input type="checkbox" name="adjacentproperty" value="93" fieldtype_id="74" >Park and Ride
-					<input type="checkbox" name="adjacentproperty" value="94" fieldtype_id="74" >Place of Worship
-					<input type="checkbox" name="adjacentproperty" value="95" fieldtype_id="74" >Residence-townhouse
-					<input type="checkbox" name="adjacentproperty" value="96" fieldtype_id="74" >Residence-detached
-					<input type="checkbox" name="adjacentproperty" value="97" fieldtype_id="74" >Retail Store
-					<input type="checkbox" name="adjacentproperty" value="98" fieldtype_id="74" >School
-					<input type="checkbox" name="adjacentproperty" value="99" fieldtype_id="74" >Supermarket
-					<input type="checkbox" name="adjacentproperty" value="100" fieldtype_id="74" >Transit station/center
-					<input type="checkbox" name="adjacentproperty" value="101" fieldtype_id="74" >Vacant lot
+				<label for="adjacentproperty">What type of property is adjacent to the busstop?</label><br />
+				<table>
+					<tr><td><input type="checkbox" name="adjacentproperty" value="82" fieldtype_id="74" >Apartment Building</td>
+					<td><input type="checkbox" name="adjacentproperty" value="83" fieldtype_id="74" >Day Care</td>
+					<td><input type="checkbox" name="adjacentproperty" value="84" fieldtype_id="74" >Government Building</td></tr>
+					
+					<tr><td><input type="checkbox" name="adjacentproperty" value="85" fieldtype_id="74" >Hospital</td>
+					<td><input type="checkbox" name="adjacentproperty" value="86" fieldtype_id="74" >Human Service Agency</td>
+					<td><input type="checkbox" name="adjacentproperty" value="87" fieldtype_id="74" >Industrial Site/Bldg.</td></tr>
+										
+					<tr><td><input type="checkbox" name="adjacentproperty" value="88" fieldtype_id="74" >Library</td>
+					<td><input type="checkbox" name="adjacentproperty" value="89" fieldtype_id="74" >Mall/Shopping Center</td>
+					<td><input type="checkbox" name="adjacentproperty" value="90" fieldtype_id="74" >Nursing Home</td></tr>
+					
+					<tr><td><input type="checkbox" name="adjacentproperty" value="91" fieldtype_id="74" >Office Building</td>
+					<td><input type="checkbox" name="adjacentproperty" value="92" fieldtype_id="74" >Park</td>
+					<td><input type="checkbox" name="adjacentproperty" value="93" fieldtype_id="74" >Park and Ride</td></tr>
+										
+					<tr><td><input type="checkbox" name="adjacentproperty" value="94" fieldtype_id="74" >Place of Worship</td>
+					<td><input type="checkbox" name="adjacentproperty" value="95" fieldtype_id="74" >Residence-townhouse</td>
+					<td><input type="checkbox" name="adjacentproperty" value="96" fieldtype_id="74" >Residence-detached</td></tr>
+					
+					<tr><td><input type="checkbox" name="adjacentproperty" value="97" fieldtype_id="74" >Retail Store</td>
+					<td><input type="checkbox" name="adjacentproperty" value="98" fieldtype_id="74" >School</td>
+					<td><input type="checkbox" name="adjacentproperty" value="99" fieldtype_id="74" >Supermarket</td></tr>
+					
+					<tr><td><input type="checkbox" name="adjacentproperty" value="100" fieldtype_id="74" >Transit station/center</td>
+					<td><input type="checkbox" name="adjacentproperty" value="101" fieldtype_id="74" >Vacant lot</td></tr>
+				</table>
 			</p>
 			<p>
 				<label for="distancefrompreviousbusstop">Distance from previous bus stop (in feet)</label>
