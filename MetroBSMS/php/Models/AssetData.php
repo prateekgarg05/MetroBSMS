@@ -122,7 +122,7 @@ class AssetData {
 			$this->setValue("NULL");
 		}
 		else {
-			$this->setValue($assetData['value']);
+			$this->setValue(addslashes($assetData['value']));
 		}
 		if ($assetData['domainvalue_id'] == "") {
 			$this->setDomainValueID("NULL");
@@ -215,6 +215,31 @@ class AssetData {
 		$DB->openRunClose($query);
 	}
 	
+	public function IsImageDataPresent($imageData)
+	{
+		$query = "SELECT name FROM image WHERE name LIKE '%".$imageData["name"]."%'";
+		$DB = DBHelper::getInstance();
+		$resultArray = $DB->openRunClose($query);
+		if (count($resultArray) > 0)
+			return $resultArray[0]["name"];
+		else 
+			return "";
+	}
+	
+	public function CheckBusStopDataPresent($stopID)
+	{
+		$query = "SELECT * FROM asset_data where asset_id = " . $stopID;
+		$DB = DBHelper::getInstance();
+		$resultArray = $DB->openRunClose($query);
+		if (count($resultArray) <= 0)
+			return false;
+		else 
+		{
+			$query = "DELETE FROM asset_data WHERE asset_id = " . $stopID . " AND fieldtype_id != 71";
+			$DB = DBHelper::getInstance();
+			$DB->openRunClose($query);
+		}
+	}
 }
 
 ?>

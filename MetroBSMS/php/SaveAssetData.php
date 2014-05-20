@@ -16,6 +16,10 @@ require_once './Models/AssetData.php';
 $assetDataJsonString = $_REQUEST['busstopData'];
 $assetDataArray = json_decode($assetDataJsonString, true);
 
+$stopID = $assetDataArray['data'][0]['asset_id'];
+$assetDataObj = new AssetData();
+$result = $assetDataObj->CheckBusStopDataPresent($stopID);
+
 foreach ($assetDataArray['data'] as $assetData) {
 	$assetDataObject = new AssetData();
 	$assetDataObject->createObjectFromArray($assetData);

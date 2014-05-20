@@ -5,17 +5,61 @@ html {
 body {
 	padding:0;
 	margin:0;
-	font-family:Arial, Helvetica, sans-serif;
+	font-family: Verdana, Geneva, sans-serif;
 	font-size:14px;
 	height:100%;
 
 }
+
+.header {
+background: #333;
+width: 100%;
+display: block;
+height: 70px;	
+}
+.header .logo{
+padding: 5px 10px;
+display:block;
+float: left;
+width: 25%;
+}
+.header .util{
+padding: 5px 15px;
+display:block;
+float: right;
+width: 75%;
+color: #fff;
+text-align:right;
+}
+.header .util a, .header .util a:link, .header .util a:visited, .header .util a:active {
+color: #fff;
+}
+.header .util a:hover {
+color: #fff;
+text-decoration:none;
+}
+.header .util .title {
+	font-size: 16px;
+	margin-bottom: 3px;
+}
+
+/*Base Map */
 .fullmap {
      width: 75%;
      height: 100%;
      position: absolute;
-     margin-top: -345px;
+     margin-top: -335px;
    }
+   
+.sidebar
+{
+	float:right;
+	width: 25%;
+    height: 100%; 
+	padding:15px 20px 30px;
+	overflow:hidden;  
+	background: #ececec; 
+}
 .smallmap{
 	 height: 56%;
      margin: 0px;
@@ -37,13 +81,8 @@ body {
 	color: white;
 	font-size: 2.0em;
 }
-
-.sidebar
-{
-	float:right;
-	width: 20%;
-    height: 100%;   
-    
+ .divider {
+margin: 0 -10px;
 }
 .missing
 {
@@ -74,13 +113,7 @@ body {
    box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
-.sidebar
-{
-	float:right;
-	width: 25%;
-    height: 100%;   
-    
-}
+
 .panel-header {
 	width:330px; 
 	height:40px; 
@@ -145,6 +178,7 @@ h3 {
 input[type="checkbox"] {
 	height:30px;
 	width:30px;
+	vertical-align: middle;
 }
 .sidebar input[type="text"] {
 	margin:10px 0;
@@ -154,9 +188,9 @@ input[type="checkbox"] {
   font-size: 14px;
   font-weight: normal;
 }
-.sidebar label, .form-label {
-	font-family:Arial, Helvetica, sans-serif;
-	color:#ffffff;
+ .sidebar label, .form-label {
+	font-family:Verdana, Helvetica, sans-serif;
+	color:#333;
 	font-size:18px;
 	font-weight:bold;
 }
@@ -214,7 +248,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#383e40', end
 
 
 }
-.sidebar, .panel-header {
+
+.panel-header {
 background: #2695d6; /* Old browsers */
 /* IE9 SVG, needs conditional override of 'filter' to 'none' */
 background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzI2OTVkNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyMTg0YmUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
@@ -233,11 +268,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2695d6', end
   background-size: cover;
   height: 100%;
 }
-.sidebar {
-	padding:20px 30px 40px;
-	height:auto;
-	overflow:hidden;
-}
+
+
 .container {
   width: 100%;
 }
@@ -301,27 +333,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2695d6', end
 .button-icon {
 	margin-top:3px;
 }
-.sidebar .legend {
-  background: none repeat scroll 0 0 #FBFBFB;
-  border: 1px solid #E5E5E5;
-  border-radius:5px;
-  box-shadow: 1px 1px 2px rgba(200, 200, 200, 0.2) inset;
-  color: #999999;
-  font-size: 20px;
-  font-weight: 200;
-  line-height: 1;
-  margin-bottom: 16px;
-  margin-right: 6px;
-  margin-top: 7px;
-  outline: medium none;
-  padding: 3px;
-  width: 100%;
-}
 
-.legend-label {
-	padding:7px;
-	color:#333;
-}
 .form-clear {
 	clear:both;
 }
@@ -332,6 +344,42 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2695d6', end
 	padding-top:10px;
 	margin:20px 0 32px;
 }
+.sidebar .legend {
+  background: none repeat scroll 0 0 #FBFBFB;
+  border: 1px solid #E5E5E5;
+  border-radius:5px;
+  box-shadow: 1px 1px 2px rgba(200, 200, 200, 0.2) inset;
+  outline: medium none;
+  padding: 10px;
+  width: 100%;
+  float:left;
+}
+
+.legend-title {
+	padding:0 0 7px;
+	color:#333;
+	font-size: 20px;
+  font-weight: 200;
+}
+.legend-item {
+	font-size: 11px;
+	display: block;
+	float: left;
+	width: 50%;
+	padding: 5px 0;
+}
+.legend-item-long {
+	font-size: 14px;
+	width: 100%;
+
+}
+
+.legend-item  img{
+	vertical-align: middle;
+	margin-left: 5px;
+}
+
+
 .sidebar-row-upper {
 	height:80%;
 }

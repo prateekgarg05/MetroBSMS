@@ -54,12 +54,6 @@ function initialize() {
     zoom: 11    
   });
   
-  marker = new google.maps.Marker({
-	    map: map,
-	    position: centerPoint,
-		title: 'My Location'		
-	  });
- 
   ReadData();
 }
 
@@ -97,8 +91,14 @@ function ReadData()
 	map.setCenter(centerPoint);
     map.setZoom(11);
     
+    if(qs["mystop"] == 1)
+    	ifmystop = true;
+    
 	for (var i=0; i< contentobj.data.length ;i++)
 		{
+			if (document.getElementById("linenumber").value == "" && ifmystop == false && i % 10 != 0)
+				continue;
+				
 			item = (contentobj.data)[i];
 			if (user == item.username || user == 'admin')
 				{

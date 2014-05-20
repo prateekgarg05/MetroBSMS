@@ -1,4 +1,4 @@
-
+<!DOCTYPE>
 <html>
 <head>
 <title>BSMS Admin</title>
@@ -31,6 +31,7 @@ $(document).ready(function(){
 		top:0,
 		extruderOpacity:.8,
 		textOrientation:"tb",
+		closeOnExternalClick:false,
 		onExtOpen:function(){},
 		onExtContentLoad:function(){},
 		onExtClose:function(){}
@@ -42,6 +43,7 @@ $(document).ready(function(){
 		top:0,
 		extruderOpacity:.8,
 		textOrientation:"tb",
+		closeOnExternalClick:false,
 		onExtOpen:function(){},
 		onExtContentLoad:function(){},
 		onExtClose:function(){}
@@ -53,6 +55,7 @@ $(document).ready(function(){
 		top:0,
 		extruderOpacity:.8,
 		textOrientation:"tb",
+		closeOnExternalClick:false,
 		onExtOpen:function(){},
 		onExtContentLoad:function(){},
 		onExtClose:function(){}
@@ -63,7 +66,11 @@ $(document).ready(function(){
 	};
 });
 </script>
-
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 
 <body onLoad="ClearFields()">
@@ -80,11 +87,11 @@ $(document).ready(function(){
 	<li><a href="#tabs-6">Radius Report</a></li>
 	<li><a href="#tabs-7">Radius Report for Unique Stops</a></li>
   </ul>
-  <div id="tabs-1">	
+  <div id="tabs-1" class="gradient">	
   <div class="tabs-inner">	
 	<p>		
 		<label for="firstname">First Name </label> 
-		<input type="text" id="firstname" name="firstname" />	
+		<input type="text" id="firstname" name="firstname">	
 	</p>
 	<p>
 		<label for="lastname">Last Name</label>
@@ -94,7 +101,7 @@ $(document).ready(function(){
 		<label for="username">Username</label><label class="required">*</label>
 		<input id="username" name="username" type="text">
 		<button class="btn-primary" onClick="checkUserAvailability()" >Check Availability</button>
-		<label id="userAvailable" class="message" />
+		<label id="userAvailable" class="message"></label>
 	</p>
 	<p>
 		<label for="password">Password</label><label class="required">*</label>
@@ -104,27 +111,27 @@ $(document).ready(function(){
 		* = Required Fields
 	</p>
 	<button class="btn-primary" onClick="addUser()" >Submit</button>
-	<label id="userConfirmation" class="message"/>
+	<label id="userConfirmation" class="message"></label>
     </div>
   </div>
   
-  <div id="tabs-2" >
+  <div id="tabs-2" class="gradient">
   <div class="tabs-inner">		
 	<p>
 		<label for="crewname">Crew Name</label><label class="required">*</label>
 		<input id="crewname" name="crewname" type="text">
 		<button class="btn-primary" onClick="checkCrewAvailability()" >Check Availability</button>
-		<label id="crewAvailable" class="message"/>
+		<label id="crewAvailable" class="message"></label>
 	</p>
 	<p class="required">
 		* = Required Fields
 	</p>
 	<button class="btn-primary" onClick="addCrew()" >Submit</button>
-	<label id="crewConfirmation" class="message"/>
+	<label id="crewConfirmation" class="message"></label>
     </div>
   </div>
   
-  <div id="tabs-3">
+  <div id="tabs-3" class="gradient">
   <div class="tabs-inner">
   	<p>
   		<label for="selectuser">Select User</label><label class="required">*</label>
@@ -142,11 +149,11 @@ $(document).ready(function(){
 		* = Required Fields
 	</p>
   	<button class="btn-primary" onClick="assignCrew()" >Submit</button>
-	<label id="assignCrewConfirmation" class="message"/>
+	<label id="assignCrewConfirmation" class="message"></label>
     </div>
   </div>
   
-  <div id="tabs-4">
+  <div id="tabs-4" class="gradient">
   <div class="tabs-inner">
   	<div style="width:30%;">
 	  	<p>
@@ -163,7 +170,7 @@ $(document).ready(function(){
 	  	</p>  	
 	  	<p>		
 			<label for="selectstop">Select Stop from Map </label><label class="required">*</label>
-			<input type="text" id="selectstop" name="selectstop" />	
+			<input type="text" id="selectstop" name="selectstop">	
 		</p>
 	  	<p class="required">
 			* = Required Fields
@@ -183,11 +190,11 @@ $(document).ready(function(){
 	  <div class="logo"><img src="../img/site/logo.png" /></div>
 		<div class="filter">
 			<label for="centerpoint">Select a Point on Map</label>
-			<input id="centerpoint" name="centerpoint" type="text" class="prepopulate" rel="Select a Point on Map" />				
+			<input id="centerpoint" name="centerpoint" type="text" class="prepopulate" rel="Select a Point on Map" >				
 	    </div>
 	    <div class="filter">
 			<label for="radius">Enter Radius (In Meters)</label>
-			<input id="radius" name="radius" type="text" class="prepopulate" rel="Enter Radius" />
+			<input id="radius" name="radius" type="text" class="prepopulate" rel="Enter Radius" >
 			<button type="button" title="Filter" value="Filter" class="btn-primary" onClick="FilterStops()">Find</button>
 	    </div>	    
 
@@ -208,7 +215,7 @@ $(document).ready(function(){
   
   </div>
   
-  <div id="tabs-5">
+  <div id="tabs-5" class="gradient">
   <div class="tabs-inner">
   	<p>
   		<label for="selectcrew0">Select Crew</label><label class="required">*</label>
@@ -226,11 +233,11 @@ $(document).ready(function(){
 		* = Required Fields
 	</p>
   	<button class="btn-primary" onClick="assignLine()" >Submit</button>
-	<label id="assignLineConfirmation" class="message"/>
+	<label id="assignLineConfirmation" class="message"></label>
   </div>
   </div>
   
-  <div id="tabs-6">
+  <div id="tabs-6" class="gradient">
   <div class="tabs-inner">
   	<p>
   		<label for="selectcrew6">Select Crew</label><label class="required">*</label>
@@ -246,7 +253,7 @@ $(document).ready(function(){
   	</p>  	
   	<p>		
 		<label for="selectstop6">Select Stop from Map </label><label class="required">*</label>
-		<input type="text" id="selectstop6" name="selectstop6" />	
+		<input type="text" id="selectstop6" name="selectstop6">	
 	</p>
   	<p class="required">
 		* = Required Fields
@@ -262,7 +269,7 @@ $(document).ready(function(){
 	  <div class="logo"><img src="../img/site/logo.png" /></div>		
 	    <div class="filter">
 			<label for="radius1">Enter Radius (In Meters)</label>
-			<input id="radius1" name="radius1" type="text" class="prepopulate" rel="Enter Radius" />
+			<input id="radius1" name="radius1" type="text" class="prepopulate" rel="Enter Radius" >
 			<button type="button" title="Filter" value="Filter" class="btn-primary" onClick="GenerateReport()">Generate</button>
 	    </div>	    
 	  <div class="count">
@@ -279,7 +286,7 @@ $(document).ready(function(){
 
   </div>
   
-  <div id="tabs-7">
+  <div id="tabs-7" class="gradient">
   <div class="tabs-inner">
   	<p>
   		<label for="selectcrew7">Select Crew</label><label class="required">*</label>
@@ -295,7 +302,7 @@ $(document).ready(function(){
   	</p>  	
   	<p>		
 		<label for="selectstop7">Select Stop from Map </label><label class="required">*</label>
-		<input type="text" id="selectstop7" name="selectstop7" />	
+		<input type="text" id="selectstop7" name="selectstop7" >	
 	</p>
   	<p class="required">
 		* = Required Fields
@@ -313,7 +320,7 @@ $(document).ready(function(){
 	  <div class="logo"><img src="../img/site/logo.png" /></div>		
 	    <div class="filter">
 			<label for="radius2">Enter Radius (In Meters)</label>
-			<input id="radius2" name="radius2" type="text" class="prepopulate" rel="Enter Radius" />
+			<input id="radius2" name="radius2" type="text" class="prepopulate" rel="Enter Radius" >
 			<button type="button" title="Filter" value="Filter" class="btn-primary" onClick="GenerateUniqueReport()">Generate</button>
 	    </div>	    
 	  

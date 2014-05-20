@@ -120,12 +120,22 @@ class BusStop {
 	
 	public function getBusStopInformation($stopID) {
 		
-		$query = "SELECT stopID, longitude, latitude, onstreet, crossstreet, direction, atorbetween, betweenstreet, nearfarmid, jurisdiction";
-		$query .= " FROM bus_stop_newinfo WHERE stopID = ";
-		$query .= $stopID ." LIMIT 1";
+		$query = "SELECT informationtype_id as infotypeid, field_type.description as fieldtype, asset_data.value, domainvalue_id as domainvalueid ";
+		$query .= "FROM asset_data, field_type ";
+		$query .= "WHERE fieldtype_id = field_type.id and asset_id =" . $stopID;
 		$DB = DBHelper::getInstance();
 		$resultArray = $DB->openRunClose($query);
-		return $resultArray;
+		if (count($resultArray) > 0)
+			return $resultArray;
+		else 
+		{		
+			$query = "SELECT stopID, longitude, latitude, onstreet, crossstreet, direction, atorbetween, betweenstreet, nearfarmid, jurisdiction";
+			$query .= " FROM bus_stop_newinfo WHERE stopID = ";
+			$query .= $stopID ." LIMIT 1";			
+			$resultArray = $DB->openRunClose($query);
+			return $resultArray;		
+		}
+		
 	}
 	
 	public function getLineNumbers()

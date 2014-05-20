@@ -6,12 +6,13 @@ var busstopidnum;
 function ParseData(asset_id,username)
 {
 	busstopidnum = asset_id;
-	for(var i=0;i<9;i++)
+	for(var i=0;i<11;i++)
 	{
 		var section = document.getElementById("wizard-p-" + i);
 		getTextNodes(section,i+1,username);		
 		getSelectNodes(section,i+1,username);
 		getRadioButtons(section,i+1,username);
+		getCheckBoxes(section,i+1,username);
 		getTextArea(section,i+1,username);
 		getImages(section,i+1,username);
 	}
@@ -33,7 +34,7 @@ function getTextNodes(section,sectionId,username)
 					"informationtype_id": sectionId.toString(),
 					"fieldtype_id": textnodes[i].getAttribute("fieldtype_id"),
 					"asset_id": busstopidnum,
-					"value": textnodes[i].value,
+					"value": ((textnodes[i].getAttribute("kind") != null)?(textnodes[i].getAttribute("kind") + ":" + textnodes[i].value):textnodes[i].value),
 					"domainvalue_id": "",
 					"enteredby_username":username
 				};
@@ -49,7 +50,7 @@ function getSelectNodes(section,sectionId,username)
 	
 	for (var i=0; i<selectnodes.length; i++)
 	{
-		if (selectnodes[i].options[selectnodes[i].selectedIndex].value != "0")
+		if (selectnodes[i].options[selectnodes[i].selectedIndex].value != "0" && selectnodes[i].getAttribute("fieldtype_id") != "97")
 		{				
 			var newobj = {
 				"assettype_id":"1",
@@ -81,6 +82,29 @@ function getRadioButtons(section,sectionId,username)
 				"asset_id": busstopidnum,
 				"value": "",
 				"domainvalue_id": radionodes[i].value,
+				"enteredby_username":username				
+			};
+			busstopData.data.push(newobj);				
+			//alert( JSON.stringify(newobj));
+		}		
+	}	
+}
+
+function getCheckBoxes(section,sectionId,username)
+{
+	var checkboxes = section.querySelectorAll("input[type=checkbox]");
+	
+	for (var i=0; i<checkboxes.length; i++)
+	{
+		if (checkboxes[i].checked == true)
+		{				
+			var newobj = {
+				"assettype_id":"1",
+				"informationtype_id": sectionId.toString(),
+				"fieldtype_id": checkboxes[i].getAttribute("fieldtype_id"),
+				"asset_id": busstopidnum,
+				"value": "",
+				"domainvalue_id": checkboxes[i].value,
 				"enteredby_username":username				
 			};
 			busstopData.data.push(newobj);				
