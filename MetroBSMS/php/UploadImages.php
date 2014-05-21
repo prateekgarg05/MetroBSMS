@@ -37,13 +37,13 @@ if ($_FILES['fileInput'])
 					$temp = explode(".", $fileItem["name"]);
 					$extension = end($temp);
 					if ((($fileItem["type"] == "image/gif")
-					|| ($fileItem["type"] == "image/jpeg")
+					|| ($fileItem["type"] == "image/jpeg")					
 					|| ($fileItem["type"] == "image/jpg")
 					|| ($fileItem["type"] == "image/pjpeg")
 					|| ($fileItem["type"] == "image/x-png")
 					|| ($fileItem["type"] == "image/png"))		
-					&& in_array($extension, $allowedExts))
-					  {
+					&& in_array($extension, $allowedExts))					
+					{
 					  if ($fileItem["error"] > 0)
 					    {
 					    echo "Return Code: " . $fileItem["error"] . "<br>";
@@ -78,12 +78,12 @@ if ($_FILES['fileInput'])
 					      break;
 					      }
 					    }
-					  }
+					}
 					else
-					  {
-					  echo "Invalid file";
+					{
+					  echo $fileItem["name"] . " is an Invalid file";
 					  echo "<br /><br />";
-					  }								
+					}								
 				}
 			}
 		}

@@ -55,8 +55,8 @@ function initialize() {
 			    loadwizard();
 			    document.getElementById("stopname").innerHTML = busstopresult.onstreet + "/" + busstopresult.crossstreet;
 			    document.getElementById("busstopid").value = busstopresult.stopID;
-			    document.getElementById("latitude").value = busstopresult.latitude;
-			    document.getElementById("longitude").value = busstopresult.longitude;
+			    //document.getElementById("latitude").value = busstopresult.latitude;
+			    //document.getElementById("longitude").value = busstopresult.longitude;
 			    document.getElementById("direction").value = busstopresult.direction;
 			    document.getElementById("onstreet").value = busstopresult.onstreet;
 			    document.getElementById("crossstreet").value = busstopresult.crossstreet;
@@ -253,7 +253,7 @@ function onstepChanging(event, currentIndex, newIndex)
 			for(var k=0;k<currentImages[0].files.length;k++)
 	    	{
 	    		var item = currentImages[0].files[k];
-	    		var newobj = {"name":"_"+item.name};
+	    		var newobj = {"name":"[_]"+item.name};
 	    		imageData.push(newobj);
 	    	}
 	
