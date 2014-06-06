@@ -162,6 +162,8 @@ h3 {
   background: linear-gradient(to bottom, #F79321 0%, #DC7C0E 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
   border: 2px solid #C46900;
   border-radius: 15px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
   color: #FFFFFF;
   cursor: pointer;
   display: inline-block;
@@ -264,6 +266,7 @@ background: -o-linear-gradient(top,  #ffffff 0%,#e8e8e8 100%); /* Opera 11.10+ *
 background: -ms-linear-gradient(top,  #ffffff 0%,#e8e8e8 100%); /* IE10+ */
 background: linear-gradient(to bottom,  #ffffff 0%,#e8e8e8 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e8e8e8',GradientType=0 ); /* IE6-8 */
+
 
 }
 .sidebar {
@@ -379,7 +382,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .extruder-container #map-canvas {
 	border:5px solid #000000;
 }
-#extruderRight table {
+#extruderRight table, #extruderRight1 table, #extruderRight2 table {
 	text-shadow: 0px 0px 0px #333333;
 }
 /*#tabs-7 #Count2 table {

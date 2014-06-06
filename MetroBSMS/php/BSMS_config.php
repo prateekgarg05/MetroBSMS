@@ -15,6 +15,6 @@
 define("DB_HOST", "localhost");
 define("DB_USER", "mbsm0_crgDev");
 define("DB_PASSWORD", "crgDev");
-define("DB_NAME", "mbsm0_test");
+define("DB_NAME", "mbsm0_dev");
 
 ?>

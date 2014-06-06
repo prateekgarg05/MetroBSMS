@@ -29,7 +29,7 @@ function modalDisplay(type) {
     <a href="/BaseMap.php" class="logo"><img src="img/site/logo.png" /></a>
     <div class="util">
       <h1 class="title">Bus Stop Managment System</h1>
-      <div class="welcome">Welcome, Patrick! | <a href="/Login.php">Logout</a></div>
+      <div class="welcome">Welcome, User! | <a href="/Login.php">Logout</a></div>
     </div>
   </div>
   <img src="img/loading.gif"></img>

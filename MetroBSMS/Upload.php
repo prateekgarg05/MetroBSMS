@@ -219,7 +219,7 @@ $(function() {
 		  </div>
 		</div>
 	  </div>
-	  <input type="file" id="fileInput" name="fileInput[]" accept="image/*" capture="camera" multiple/>
+	  <input type="file" id="fileInput" name="fileInput[]" accept="image/*" capture multiple/>
 	  <input type="hidden" name="username" id="username"/>
 	</form>
 	

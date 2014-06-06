@@ -1,29 +1,32 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Bus Stop Information</title>
+<title>Bus Stop Information</title>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/jquery.steps.css">
-    <link rel="stylesheet" href="css/jquery-ui.css">
-    <link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/jquery.steps.css">
+<link rel="stylesheet" href="css/jquery-ui.css">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/modal.css" media="all">
 
-    <script src="scripts/modernizr-2.6.2.min.js"></script>
-    <script src="scripts/jquery.js"></script>
-    <script src="scripts/jquery.steps.js"></script>
-    <script src="scripts/jquery.steps.min.js"></script>
-    <script src="scripts/jquery.cookie-1.3.1.js"></script>
-    <script src="scripts/jquery-ui.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-    <script src="scripts/jquery.validate.js"></script>
-    <script src="scripts/additional-methods.js"></script>
-    <script src='http://crg:5000/socket.io/socket.io.js'></script>
-    <script src="scripts/location.js"></script>
-    
+<script src="scripts/modernizr-2.6.2.min.js"></script>
+<script src="scripts/jquery.js"></script>
+<script src="scripts/jquery.steps.js"></script>
+<script src="scripts/jquery.steps.min.js"></script>
+<script src="scripts/jquery.cookie-1.3.1.js"></script>
+<script src="scripts/jquery-ui.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script src="scripts/jquery.validate.js"></script>
+<script src="scripts/additional-methods.js"></script>
+<script src="scripts/modal.js"></script>    
+<script src="http://crg:5000/socket.io/socket.io.js"></script>
+<script src="scripts/location.js"></script>
+<script src="scripts/camera.js"></script>
+
 </head>
 
 <body>
@@ -31,7 +34,7 @@
     <a href="/BaseMap.php" class="logo"><img src="img/site/logo.png" /></a>
     <div class="util">
       <h1 class="title">Bus Stop Managment System</h1>
-      <div class="welcome">Welcome, Patrick! | <a href="/Login.php">Logout</a></div>
+      <div class="welcome">Welcome, User! | <a href="/Login.php">Logout</a></div>
     </div>
   </div>
     <div id="stop" class="stoptitle">
@@ -239,10 +242,17 @@
                         <textarea id="otherinfo" name="Other Information" fieldtype_id="23" rows="5" cols="50"></textarea>
                     </p>
                     <p>
-                        <label for="fileInput">Upload Photos</label>
-                        <input type="file" id="fileInput" name="Image" fieldtype_id="71" accept="image/*" capture="camera" multiple />
-                        <label id="fileError" class="error"></label>
+                    	<div>
+	                        <label for="fileInput">Take Photos</label>
+	                        <!--<input type="file" id="fileInput" name="Image" fieldtype_id="71" accept="image/*" capture="camera" multiple />
+	                        <label id="fileError" class="error"></label> -->
+	                        <input type="button" id="OnCamera" value="Open Camera" onclick="OpenCamera(this)" section="02">
+	                        <div name="SelectedImages" class="SelectedImages">                    	
+	                    	</div>
+                    	</div>
                     </p>
+                    
+                    
                 </div>
 
                 <h2>Shelter</h2>
@@ -315,9 +325,14 @@
                         <textarea id="otherinfo" name="Other Information" fieldtype_id="23" rows="5" cols="50"></textarea>
                     </p>
                     <p>
-                        <label for="fileInput">Upload Photos</label>
-                        <input type="file" id="fileInput" name="Image" fieldtype_id="71" accept="image/*" capture="camera" multiple />
-                        <label id="fileError" class="error"></label>
+                    	<div>
+	                        <label for="fileInput">Take Photos</label>
+	                        <!--<input type="file" id="fileInput" name="Image" fieldtype_id="71" accept="image/*" capture="camera" multiple />
+	                        <label id="fileError" class="error"></label> -->
+	                        <input type="button" id="OnCamera" value="Open Camera" onclick="OpenCamera(this)" section="03">
+	                        <div name="SelectedImages" class="SelectedImages">                    	
+	                    	</div>
+                    	</div>
                     </p>
                 </div>
 
@@ -492,9 +507,14 @@
                         <textarea id="otherinfo" name="Other Information" fieldtype_id="23" rows="5" cols="50"></textarea>
                     </p>
                     <p>
-                        <label for="fileInput">Upload Photos</label>
-                        <input type="file" id="fileInput" name="Image" fieldtype_id="71" accept="image/*" capture="camera" multiple />
-                        <label id="fileError" class="error"></label>
+                    	<div>
+	                        <label for="fileInput">Take Photos</label>
+	                        <!--<input type="file" id="fileInput" name="Image" fieldtype_id="71" accept="image/*" capture="camera" multiple />
+	                        <label id="fileError" class="error"></label> -->
+	                        <input type="button" id="OnCamera" value="Open Camera" onclick="OpenCamera(this)" section="04">
+	                        <div name="SelectedImages" class="SelectedImages">                    	
+	                    	</div>
+                    	</div>
                     </p>
                 </div>
 
@@ -646,9 +666,14 @@
                         <textarea id="otherinfo" name="Other Information" fieldtype_id="23" rows="5" cols="50"></textarea>
                     </p>
                     <p>
-                        <label for="fileInput">Upload Photos</label>
-                        <input type="file" id="fileInput" name="Image" fieldtype_id="71" accept="image/*" capture="camera" multiple />
-                        <label id="fileError" class="error"></label>
+                    	<div>
+	                        <label for="fileInput">Take Photos</label>
+	                        <!--<input type="file" id="fileInput" name="Image" fieldtype_id="71" accept="image/*" capture="camera" multiple />
+	                        <label id="fileError" class="error"></label> -->
+	                        <input type="button" id="OnCamera" value="Open Camera" onclick="OpenCamera(this)" section="05">
+	                        <div name="SelectedImages" class="SelectedImages">                    	
+	                    	</div>
+                    	</div>
                     </p>
                 </div>
 
@@ -709,9 +734,14 @@
                         <textarea id="otherinfo" name="Other Information" fieldtype_id="23" rows="5" cols="50"></textarea>
                     </p>
                     <p>
-                        <label for="fileInput">Upload Photos</label>
-                        <input type="file" id="fileInput" name="Image" fieldtype_id="71" accept="image/*" capture="camera" multiple />
-                        <label id="fileError" class="error"></label>
+                    	<div>
+	                        <label for="fileInput">Take Photos</label>
+	                        <!--<input type="file" id="fileInput" name="Image" fieldtype_id="71" accept="image/*" capture="camera" multiple />
+	                        <label id="fileError" class="error"></label> -->
+	                        <input type="button" id="OnCamera" value="Open Camera" onclick="OpenCamera(this)" section="06">
+	                        <div name="SelectedImages" class="SelectedImages">                    	
+	                    	</div>
+                    	</div>
                     </p>
 
                 </div>
@@ -742,9 +772,14 @@
                         <textarea id="otherinfo" name="Other Information" fieldtype_id="23" rows="5" cols="50"></textarea>
                     </p>
                     <p>
-                        <label for="fileInput">Upload Photos</label>
-                        <input type="file" id="fileInput" name="Image" fieldtype_id="71" accept="image/*" capture="camera" multiple />
-                        <label id="fileError" class="error"></label>
+                    	<div>
+	                        <label for="fileInput">Take Photos</label>
+	                        <!--<input type="file" id="fileInput" name="Image" fieldtype_id="71" accept="image/*" capture="camera" multiple />
+	                        <label id="fileError" class="error"></label> -->
+	                        <input type="button" id="OnCamera" value="Open Camera" onclick="OpenCamera(this)" section="07">
+	                        <div name="SelectedImages" class="SelectedImages">                    	
+	                    	</div>
+                    	</div>
                     </p>
                 </div>
 
@@ -764,10 +799,15 @@
                         <label for="otherinfo">Other Information</label>
                         <textarea id="otherinfo" name="Other Information" fieldtype_id="23" rows="5" cols="50"></textarea>
                     </p>
-                    <p>
-                        <label for="fileInput">Upload Photos</label>
-                        <input type="file" id="fileInput" name="Image" fieldtype_id="71" accept="image/*" capture="camera" multiple />
-                        <label id="fileError" class="error"></label>
+                   <p>
+                    	<div>
+	                        <label for="fileInput">Take Photos</label>
+	                        <!--<input type="file" id="fileInput" name="Image" fieldtype_id="71" accept="image/*" capture="camera" multiple />
+	                        <label id="fileError" class="error"></label> -->
+	                        <input type="button" id="OnCamera" value="Open Camera" onclick="OpenCamera(this)" section="08">
+	                        <div name="SelectedImages" class="SelectedImages">                    	
+	                    	</div>
+                    	</div>
                     </p>
                 </div>
 
@@ -856,10 +896,15 @@
                         <label for="comments">Any Comments</label>
                         <textarea id="comments" name="Any Comments" fieldtype_id="20" rows="5" cols="50"></textarea>
                     </p>
-                    <p>
-                        <label for="fileInput">Upload Photos</label>
-                        <input type="file" id="fileInput" name="Image" fieldtype_id="71" accept="image/*" capture="camera" multiple />
-                        <label id="fileError" class="error"></label>
+                   <p>
+                    	<div>
+	                        <label for="fileInput">Take Photos</label>
+	                        <!--<input type="file" id="fileInput" name="Image" fieldtype_id="71" accept="image/*" capture="camera" multiple />
+	                        <label id="fileError" class="error"></label> -->
+	                        <input type="button" id="OnCamera" value="Open Camera" onclick="OpenCamera(this)" section="09">
+	                        <div name="SelectedImages" class="SelectedImages">                    	
+	                    	</div>
+                    	</div>
                     </p>
 
                 </div>
@@ -929,10 +974,15 @@
                         <label for="otherinfo">Other Information</label>
                         <textarea id="otherinfo" name="Other Information" fieldtype_id="23" rows="5" cols="50"></textarea>
                     </p>
-                    <p>
-                        <label for="fileInput">Upload Photos</label>
-                        <input type="file" id="fileInput" name="Image" fieldtype_id="71" accept="image/*" capture="camera" multiple />
-                        <label id="fileError" class="error"></label>
+                   <p>
+                    	<div>
+	                        <label for="fileInput">Take Photos</label>
+	                        <!--<input type="file" id="fileInput" name="Image" fieldtype_id="71" accept="image/*" capture="camera" multiple />
+	                        <label id="fileError" class="error"></label> -->
+	                        <input type="button" id="OnCamera" value="Open Camera" onclick="OpenCamera(this)" section="10">
+	                        <div name="SelectedImages" class="SelectedImages">                    	
+	                    	</div>
+                    	</div>
                     </p>
                 </div>
                 <h2>Sidewalk</h2>
@@ -984,15 +1034,34 @@
                         <label for="otherinfo">Other Information</label>
                         <textarea id="otherinfo" name="Other Information" fieldtype_id="23" rows="5" cols="50"></textarea>
                     </p>
-                    <p>
-                        <label for="fileInput">Upload Photos</label>
-                        <input type="file" id="fileInput" name="Image" fieldtype_id="71" accept="image/*" capture="camera" multiple />
-                        <label id="fileError" class="error"></label>
+                   <p>
+                    	<div>
+	                        <label for="fileInput">Take Photos</label>
+	                        <!--<input type="file" id="fileInput" name="Image" fieldtype_id="71" accept="image/*" capture="camera" multiple />
+	                        <label id="fileError" class="error"></label> -->
+	                        <input type="button" id="OnCamera" value="Open Camera" onclick="OpenCamera(this)" section="11">
+	                        <div name="SelectedImages" class="SelectedImages">                    	
+	                    	</div>
+                    	</div>
                     </p>
                 </div>
             </div>
             <input type="hidden" name="busstopData" id="busstopData" />
         </form>
+    <div class="modal fade" id="camerabox" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    	<div class="modal-dialog" >
+      		<div class="modal-content">
+        		<video width="640" height="480" autoplay></video>
+				<input type="button" value="Click Image" id="clickImage" onclick="CaptureImage()">
+				<input type="button" value="Save" id="saveImages" onclick="SaveImages()">
+				<p id="images">
+				</p>
+				<!-- <img id="clickedimage" src="">-->
+				<canvas width="640" height="480" style="display: none"></canvas>
+			</div>
+      	</div>
+    </div>
+		
     </div>
     <script src="scripts/parse.js"></script>
     <script src="scripts/mainpage.js"></script>

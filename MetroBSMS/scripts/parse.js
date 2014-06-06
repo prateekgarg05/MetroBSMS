@@ -136,7 +136,7 @@ function getTextArea(section,sectionId,username)
 	}	
 }
 
-function getImages(section,sectionId,username)
+/*function getImages(section,sectionId,username)
 {
 	var images = section.querySelectorAll("input[type=file]");
 	
@@ -157,5 +157,27 @@ function getImages(section,sectionId,username)
 			busstopData.data.push(newobj);				
 			//alert( JSON.stringify(newobj));
 		}		
+	}	
+}*/
+
+function getImages(section,sectionId,username)
+{
+	var images = section.querySelectorAll("img.myimage");
+	
+	for (var i=0; i<images.length; i++)
+	{		
+		//var fileItem = images[i].files[j];
+		var newobj = {
+			"assettype_id":"1",
+			"informationtype_id": sectionId.toString(),
+			"fieldtype_id": images[i].getAttribute("fieldtype_id"),
+			"asset_id": busstopidnum,
+			"value": images[i].getAttribute("imgname"),
+			"domainvalue_id": "",
+			"enteredby_username":username				
+		};
+		busstopData.data.push(newobj);				
+		//alert( JSON.stringify(newobj));
+				
 	}	
 }

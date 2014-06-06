@@ -389,4 +389,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2695d6', end
 .report-stop {
 	margin-bottom: 30px;
 }
+.myimage	{
+	width: 640px;
+	height: 480px;
+}
 						

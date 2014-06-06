@@ -51,7 +51,7 @@ function initialize() {
     
   map = new google.maps.Map(document.getElementById('map-full'), {
     center: centerPoint,
-    zoom: 11    
+    zoom: 10    
   });
   
   if(qs["mystop"] == 1)
@@ -95,7 +95,7 @@ function ReadData()
 		markerCluster.clearMarkers();
 	
 	map.setCenter(centerPoint);
-    map.setZoom(11);
+    map.setZoom(10);
         
     
 	for (var i=0; i< contentobj.data.length ;i++)

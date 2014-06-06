@@ -2,6 +2,7 @@ var map;
 var infowindow;
 var service;
 var losangeles;
+var qs = getQueryStrings();	
 
 function getQueryStrings() { 
 	  var assoc  = {};
@@ -23,7 +24,6 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 function initialize() {
 	
-	var qs = getQueryStrings();	
 	var stopid = qs["stopID"];
 	var busstopresult = null;
 	
@@ -245,7 +245,7 @@ function onstepChanging(event, currentIndex, newIndex)
 	    if(currentIndex>0)
 	    {
 		    asset_id = document.getElementById("busstopid").value;
-			var qs = getQueryStrings();
+			//var qs = getQueryStrings();
 			var username = qs["username"];	
 			var imgData;	       
 			var imageData = [];		
@@ -286,6 +286,7 @@ function onstepChanging(event, currentIndex, newIndex)
 	    }
 	}
 	
+	$("#images").empty();
 	
     $("#myform").validate().settings.ignore = ":disabled,:hidden";
     return $("#myform").valid();
@@ -295,7 +296,7 @@ function onstepChanging(event, currentIndex, newIndex)
 function onfinishing(event, currentIndex)
 {
 	asset_id = document.getElementById("busstopid").value;
-	var qs = getQueryStrings();
+	//var qs = getQueryStrings();
 	var username = qs["username"];	
 	var busdata = ParseData(asset_id,username);
 			
@@ -312,7 +313,7 @@ function onfinishing(event, currentIndex)
 
 function Redirect() { 
 		
-	var qs = getQueryStrings();
+	//var qs = getQueryStrings();
 	var username = qs["username"];
 	window.location.href = "BaseMap.php?username=" + username + "&mystop=1";
 }
